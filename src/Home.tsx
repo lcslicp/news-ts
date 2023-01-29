@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import Header from './components/Header'
 import Headlines from './components/Headlines'
@@ -7,7 +8,8 @@ import Sidebar from './components/Sidebar'
 import Carousel from './components/Carousel'
 import Footer from './components/Footer'
 
-const Home = () => {
+function Home () {
+  
   return (
     <main>
       <Header />
