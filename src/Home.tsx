@@ -16,14 +16,14 @@ function Home () {
   // const [photo, setPhoto] = useState<string>('');
 
   const getHeadlines = async () => {
-    await axios.get('/latest_headlines?countries=US&topic=business').then((response: any) => {
-      setArticles(response?.data?.articles[0].title);
+    const { data } = await axios.get('/latest_headlines?countries=US&topic=business');
+
+    setArticles(data?.articles[0].title);
       console.log(articles);
       
       // setTitle(response?.data?.articles.title);
       // setSummary(response?.data?.articles.summary);
       // setPhoto(response?.data?.articles.media);
-    })
   }
 
   useEffect(() => {
