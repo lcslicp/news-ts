@@ -1,5 +1,5 @@
-import React from 'react'
-import axios from 'axios'
+import { useState, useEffect } from 'react'
+import axios from './api/axios'
 
 import Header from './components/Header'
 import Headlines from './components/Headlines'
@@ -8,12 +8,38 @@ import Sidebar from './components/Sidebar'
 import Carousel from './components/Carousel'
 import Footer from './components/Footer'
 
+
 function Home () {
+  const [articles, setArticles] = useState<string[]>([]);
+  // const [title, setTitle] = useState<string>('');
+  // const [summary, setSummary] = useState<string>('');
+  // const [photo, setPhoto] = useState<string>('');
+
+  const getHeadlines = async () => {
+    await axios.get('/latest_headlines?countries=US&topic=business').then((response: any) => {
+      setArticles(response?.data?.articles[0].title);
+      console.log(articles);
+      
+      // setTitle(response?.data?.articles.title);
+      // setSummary(response?.data?.articles.summary);
+      // setPhoto(response?.data?.articles.media);
+    })
+  }
+
+  useEffect(() => {
+    getHeadlines()
+  }, [])
+  
   
   return (
     <main>
       <Header />
-      <Headlines />
+      <Headlines
+      // articles={articles}
+      // setTitle={title}
+      // setSummary={summary}
+      // setPhoto={photo}
+      />
       <Secondary />
       <Sidebar />
       <Carousel />
