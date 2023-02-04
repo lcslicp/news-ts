@@ -1,11 +1,10 @@
 import axios from 'axios';
 
 export const getHeadlinesFromAPI = async (req, res) => {
-    const { q, lang, sort_by, page } = req.query;
     const apiKey = process.env.API_KEY;
 
     try {
-        const response = await axios.get('https://api.newscatcherapi.com/v2/latest_headlines?countries=PH',{ 
+        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=ph&category=general&pageSize=3',{ 
     headers: {
         'x-api-key': apiKey
         }

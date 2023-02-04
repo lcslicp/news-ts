@@ -1,11 +1,8 @@
 import axios from 'axios';
 
-const apiKey = '6GuHQUfTaBOCTr-vFAuRD_URIPLu6YTazp6DoKJp9Lw';
+const apiKey = '5cb39d25edd24b2e8e3701110b418107';
 
 export default axios.create({
-    baseURL: 'https://api.newscatcherapi.com/v2/',
-    withCredentials: true, 
-    headers: {
-        'x-api-key': apiKey
-    }
+    baseURL: 'http://localhost:5000/api',
+    withCredentials: true,
 });
