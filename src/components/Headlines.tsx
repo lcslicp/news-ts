@@ -5,8 +5,10 @@ const Headlines: React.FC<Props> = ({ articles }) => {
   return (
     <section>
         {articles.map(article => (
-        <li key={article.title}>
-          {article.title}</li>
+        <div key={article.title}>
+          {article.title}
+          <img src={article.urlToImage} alt={article.title} />
+          {article.publishedAt}</div>
       ))}
     </section>
   )

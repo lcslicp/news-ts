@@ -6,13 +6,6 @@ import apiKeyRouter from './routes/apiKey.js';
 dotenv.config();
 const app = express();
 
-// const corsOptions = {
-//     origin: 'http://localhost:5173',
-//     withCredentials: true,
-//     methods: ['GET']
-// }
-
-// app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/key', (req, res) => {
