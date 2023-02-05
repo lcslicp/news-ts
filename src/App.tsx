@@ -65,7 +65,6 @@ function App () {
     );
 
     setArticles(data?.articles);
-      console.log(articles);
     }catch (error) {
       console.log(error)
     

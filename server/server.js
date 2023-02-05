@@ -11,7 +11,6 @@ app.use(express.json());
 app.get('/key', (req, res) => {
   const apiKey = process.env.API_KEY;
   res.send({ apiKey });
-  console.log(process.env.API_KEY);
 });
 
 app.use(function (req, res, next) {
