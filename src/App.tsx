@@ -26,6 +26,16 @@ export interface Props {
   articles: Article[];
 }
 
+interface nav {
+  id: number,
+  href: string,
+  label: string,
+}
+
+export interface navProps {
+  links: nav[]
+}
+
 function App () {
   const [articles, setArticles] = useState<Article[]>([]);
 
@@ -66,11 +76,21 @@ function App () {
   useEffect(() => {
     getHeadlines()
   }, [])
+
+
+
+  const navLinks = [
+    {id: 1, href: '/', label: 'Home'},
+    {id: 2, href: '/business', label: 'Business'},
+    {id: 3, href: '/health', label: 'Health'},
+    {id: 4, href: '/entertainment', label: 'Entertainment'},
+    {id: 5, href: '/sports', label: 'Sports'}
+  ]
   
   
   return (
     <main>
-      <Header />
+      <Header links={navLinks} />
       <Headlines
       articles={articles}
       />

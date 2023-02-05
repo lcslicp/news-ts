@@ -4,13 +4,15 @@ export const getHeadlinesFromAPI = async (req, res) => {
     const apiKey = process.env.API_KEY;
 
     try {
-        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=ph&category=general&pageSize=3',{ 
+        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=ph&category=General',{ 
     headers: {
         'x-api-key': apiKey
         }
     });
-
-    res.json(response.data);
+        const filteredData = response.data.articles.filter(article => article.urlToImage !== null);
+        const limitedData = filteredData.slice(0, 3);
+        res.json({ articles: limitedData });
+    
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error fetching data from API' });

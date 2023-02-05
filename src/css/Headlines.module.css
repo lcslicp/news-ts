@@ -1,0 +1,64 @@
+.container {
+    display: grid;
+    width: 100%;
+    height: 600px;
+    grid-template-areas:
+    'headline1 headline2'
+    'headline1 headline3';
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.container > div:first-child {
+    grid-area: headline1;
+}
+
+.container > div:nth-child(2) {
+    grid-area: headline2;
+}
+
+.container > div:nth-child(3) {
+    grid-area: headline3;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        grid-template-areas:
+        'headline1'
+        'headline2'
+        'headline3';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+div {
+    position: relative;
+    overflow: hidden;
+}
+
+.text {
+    position: relative;
+    bottom: 0;
+    width: 75%;
+    padding-left: var(--width-padding);
+    z-index: 99;
+}
+
+.image {
+    width: 120%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    filter: brightness(30%);
+}
+
+.headline, p {
+    color: rgb(var(--white));
+}
+
+.headline {
+    font-size: 1.8em;
+    
+}
