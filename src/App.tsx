@@ -71,12 +71,9 @@ function App () {
   } 
   }
 
-
   useEffect(() => {
     getHeadlines()
   }, [])
-
-
 
   const navLinks = [
     {id: 1, href: '/', label: 'Home'},

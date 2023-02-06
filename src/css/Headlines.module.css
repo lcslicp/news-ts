@@ -5,7 +5,7 @@
     grid-template-areas:
     'headline1 headline2'
     'headline1 headline3';
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
@@ -21,28 +21,18 @@
     grid-area: headline3;
 }
 
-@media only screen and (max-width: 800px) {
-    .container {
-        grid-template-areas:
-        'headline1'
-        'headline2'
-        'headline3';
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-}
-
 div {
     position: relative;
     overflow: hidden;
 }
 
 .text {
-    position: relative;
-    bottom: 0;
-    width: 75%;
+    position: absolute;
+    width: 80%;
     padding-left: var(--width-padding);
     z-index: 99;
+    bottom: 0;
+    padding-bottom: 4%;
 }
 
 .image {
@@ -54,11 +44,90 @@ div {
     filter: brightness(30%);
 }
 
-.headline, p {
+.headline, p, span {
     color: rgb(var(--white));
 }
 
 .headline {
     font-size: 1.8em;
-    
+    margin-bottom: -10px;
 }
+
+.description {
+    width: 90%;
+    line-height:1.8em;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+span {
+    font-size: 0.8em;
+    font-weight: var(--light);
+    filter: opacity(0.5);
+}
+
+.article {
+    position: relative;
+}
+
+@media only screen and (max-width: 1450px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        'headline1 headline1'
+        'headline2 headline3';
+    }
+
+    .text {
+        width: 90%;
+    }
+
+    .headline {
+        font-size: 1.4em;
+        margin-bottom: 0;
+    }
+
+    .description {
+        font-size: 0.8em;
+        line-height: 1.6em;
+    }
+
+    .image {
+        width: 130%;
+    }
+
+    .container > div:nth-child(2) {
+        grid-area: headline2;
+    }
+    
+    .container > div:nth-child(3) {
+        grid-area: headline3;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .container {
+        grid-template-areas:
+        'headline1'
+        'headline2'
+        'headline3';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .headline {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+    .description {
+        font-size: 0.8em;
+        line-height: 1.4em;
+    }
+}
+
+

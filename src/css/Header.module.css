@@ -27,10 +27,6 @@
     padding: 20px 0;
 }
 
-.navlinks {
-    list-style-type: none;
-}
-
 .nav {
     justify-content: flex-end;
     width: 100vw;
@@ -44,14 +40,26 @@
 }
 
 .navlinks {
+    list-style-type: none;
     padding-right: var(--width-padding);
+    visibility: visible;
+    gap: 10%;
+    width: 600px;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 1200px) {
     
     .navlinks {
         gap: 10%;
-        width: 500px;
+        width: 400px;
+    }
+
+  }
+
+  @media screen and (max-width: 800px) {
+    
+    .navlinks {
+        visibility: hidden;
     }
 
   }
