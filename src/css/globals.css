@@ -32,5 +32,4 @@ a {
 
 a:hover, a:active {
   color: rgb(var(--accent));
-  /* color: rgb(41, 57, 241); */
 }

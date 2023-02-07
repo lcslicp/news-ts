@@ -3,7 +3,6 @@
     flex-direction: row;
     align-items: center;
     background-color: transparent;
-    position: fixed;
     z-index: 9;
     color: rgb(var(--white));
 }
@@ -27,15 +26,19 @@
     padding: 20px 0;
 }
 
+.header {
+    position: fixed;
+    z-index: 999;
+}
+
 .nav {
     justify-content: flex-end;
     width: 100vw;
 }
 
 .logo {
-    width: 50%;
+    width: 10%;
     height: auto;
-    z-index: 999;
     padding-left: var(--width-padding);
 }
 
@@ -60,6 +63,10 @@
     
     .navlinks {
         visibility: hidden;
+    }
+
+    .logo {
+        width: 15%;
     }
 
   }

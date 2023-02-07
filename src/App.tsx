@@ -3,7 +3,7 @@ import axios from './api/axios'
 
 import Header from './components/Header'
 import Headlines from './components/Headlines'
-import Secondary from './components/Secondary'
+import PopularSection from './components/PopularSection'
 import Sidebar from './components/Sidebar'
 import Carousel from './components/Carousel'
 import Footer from './components/Footer'
@@ -22,8 +22,12 @@ interface Article {
   content: string;
 }
 
-export interface Props {
-  articles: Article[];
+export interface headlines {
+  headlines: Article[];
+}
+
+export interface popNews {
+  popularnews: Article[];
 }
 
 interface nav {
@@ -37,7 +41,8 @@ export interface navProps {
 }
 
 function App () {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [headlines, setHeadlines] = useState<Article[]>([]);
+  const [popularNews, setPopularNews] = useState<Article[]>([]);
 
 
   useEffect(() => {
@@ -64,7 +69,29 @@ function App () {
       }
     );
 
-    setArticles(data?.articles);
+    setHeadlines(data?.articles);
+    }catch (error) {
+      console.log(error)
+    
+  } 
+  }
+
+  const getPopularHeadlines = async () => {
+
+    try {
+      const apiKey = localStorage.getItem('apiKey');
+    const { data } = await axios.get(
+      '/popularnews',
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+        },
+        withCredentials: true,
+      }
+    );
+
+    setPopularNews(data?.articles);
     }catch (error) {
       console.log(error)
     
@@ -73,6 +100,7 @@ function App () {
 
   useEffect(() => {
     getHeadlines()
+    getPopularHeadlines()
   }, [])
 
   const navLinks = [
@@ -88,9 +116,10 @@ function App () {
     <main>
       <Header links={navLinks} />
       <Headlines
-      articles={articles}
+      headlines={headlines}
       />
-      <Secondary />
+      <PopularSection
+      popularnews={popularNews} />
       <Sidebar />
       <Carousel />
       <Footer />

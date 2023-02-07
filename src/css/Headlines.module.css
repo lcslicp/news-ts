@@ -33,19 +33,16 @@ div {
     z-index: 99;
     bottom: 0;
     padding-bottom: 4%;
+    color: rgb(var(--white));
 }
 
 .image {
-    width: 120%;
+    width: 150%;
     height: auto;
     position: absolute;
     top: 0;
     object-fit: cover;
     filter: brightness(30%);
-}
-
-.headline, p, span {
-    color: rgb(var(--white));
 }
 
 .headline {
