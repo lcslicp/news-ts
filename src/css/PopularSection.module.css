@@ -1,82 +1,125 @@
 .section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: var(--bold);
-    color: var(--black);
-    border-bottom: 1px solid rgb(var(--black));
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: var(--bold);
+  color: var(--black);
+  border-bottom: 1px solid rgb(var(--black));
+  width: 100%;
 }
 
 .container {
-    width: 850px;
-    padding-left: var(--width-padding);
+  width: 850px;
+  padding-left: var(--width-padding);
 }
 
 .articleContainer {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 150px);
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 140px);
+  padding-top: 2em;
 }
 
-
 .article:first-child {
-    grid-column: 1;
-    grid-row: 1 / 4;
+  grid-column: 1;
+  grid-row: 1 / 4;
 }
 
 .article:nth-child(2) {
-    grid-row: 1;
+  grid-row: 1;
 }
 
 .article:nth-child(2),
 .article:nth-child(3),
 .article:nth-child(4) {
-    grid-column: 2;
+  grid-column: 2;
 }
 
 .article:nth-child(3) {
-    grid-row: 2;
+  grid-row: 2;
 }
 
 .article:nth-child(4) {
-    grid-row: 3;
-    border: 1px solid red;
+  grid-row: 3;
 }
 
+.innerItem,
+.mainContent,
+.text,
+.secondaryContent {
+  display: flex;
+}
 
+.innerItem,
+.mainContent,
+.text {
+  flex-direction: column;
+}
 
 .innerItem {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid blue;
+  margin-bottom: -200px;
 }
 
 .mainContent {
-    display: flex;
-    flex-direction: row;
+  align-content: flex-start;
+}
+
+.secondaryContent {
+  flex-direction: row;
+}
+
+.imageMain,
+.image {
+  width: auto;
+  height: auto;
 }
 
 .image {
-    width: auto;
-    max-width: 150px;
-    height: auto;
-    max-height: 100px;
+  max-width: 150px;
+  max-height: 100px;
+}
+
+.imageMain {
+  max-height: auto;
+  max-width: 100%;
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
+  padding-left: 3%;
+}
+
+.textMain {
+  padding-left: 0;
+}
+
+.titleMain {
+  font-size: 1em;
 }
 
 .title {
-    color: rgb(var(--black));
-    font-size: 80%;
-    margin-bottom: -10px;
+  font-size: 80%;
+  margin: -15px 0;
+}
+
+.title,
+.titleMain {
+  color: rgb(var(--black));
+}
+
+.author {
+  font-size: 0.8em;
+  margin: 0;
+  padding-bottom: 1em;
 }
 
 .description {
-    font-size: 0.8em;
-    line-height: 1.6em;
+  margin-top: 3%;
+  font-size: 0.6em;
+  line-height: 1.6em;
+}
+
+.descriptionMain {
+  font-size: 0.8em;
+  line-height: 1.8em;
 }

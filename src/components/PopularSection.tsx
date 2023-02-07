@@ -17,25 +17,59 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
             day: 'numeric',
             year: 'numeric',
           });
+
+          let title = news.title;
+
           return (
             <div key={news.title} className={styles.article}>
               <div className={styles.innerItem}>
-                <p>
+                <p className={styles.author}>
                   {news.author} &#183; <span>{date}</span>
                 </p>
-                <div className={styles.mainContent}>
+                <div
+                  className={
+                    popularnews[0].title !== title
+                      ? `${styles.secondaryContent}`
+                      : `${styles.mainContent}`
+                  }
+                >
                   <img
                     src={news.urlToImage}
-                    alt={news.title}
-                    className={styles.image}
+                    alt={title}
+                    className={
+                      popularnews[0].title !== title
+                        ? `${styles.image}`
+                        : `${styles.imageMain}`
+                    }
                   />
-                  <div className={styles.text}>
-                  <a href={news.url} target='_blank' className={styles.title}>
-                    <h3>{news.title}</h3>
-                  </a>
-                  <p className={styles.description}>{news.description}</p>
+                  <div
+                    className={
+                      popularnews[0].title !== title
+                        ? `${styles.text}`
+                        : `${styles.textMain}`
+                    }
+                  >
+                    <a
+                      href={news.url}
+                      target='_blank'
+                      className={
+                        popularnews[0].title !== title
+                          ? `${styles.title}`
+                          : `${styles.titleMain}`
+                      }
+                    >
+                      <h3>{title}</h3>
+                    </a>
+                    <p
+                      className={
+                        popularnews[0].title !== title
+                          ? `${styles.description}`
+                          : `${styles.descriptionMain}`
+                      }
+                    >
+                      {news.description.substring(0, 190)}...
+                    </p>
                   </div>
-                  
                 </div>
               </div>
             </div>

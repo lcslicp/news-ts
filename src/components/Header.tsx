@@ -1,7 +1,7 @@
 import React from 'react';
 import { navProps } from '../App';
 import styles from '../css/Header.module.css';
-import logo from '../assets/logo/news-logo-white.svg';
+import logo from '../assets/logo/news-logo-black.svg';
 
 const Header: React.FC<navProps> = ({ links }) => {
   return (
@@ -18,7 +18,9 @@ const Header: React.FC<navProps> = ({ links }) => {
           >
             {links.map((link) => (
               <li key={link.id}>
-                <a href={link.href}>{link.label}</a>
+                <a href={link.href} className={styles.label}>
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>

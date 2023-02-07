@@ -1,130 +1,148 @@
 .container {
-    display: grid;
-    width: 100%;
-    height: 600px;
-    grid-template-areas:
+  display: grid;
+  width: 94%;
+  height: 600px;
+  padding-top: 100px;
+  grid-template-areas:
     'headline1 headline2'
     'headline1 headline3';
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: auto;
 }
 
 .container > div:first-child {
-    grid-area: headline1;
+  grid-area: headline1;
 }
 
 .container > div:nth-child(2) {
-    grid-area: headline2;
+  grid-area: headline2;
 }
 
 .container > div:nth-child(3) {
-    grid-area: headline3;
+  grid-area: headline3;
 }
 
-div {
-    position: relative;
-    overflow: hidden;
-}
-
-.text {
-    position: absolute;
-    width: 80%;
-    padding-left: var(--width-padding);
-    z-index: 99;
-    bottom: 0;
-    padding-bottom: 4%;
-    color: rgb(var(--white));
-}
-
-.image {
-    width: 150%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    object-fit: cover;
-    filter: brightness(30%);
-}
-
-.headline {
-    font-size: 1.8em;
-    margin-bottom: -10px;
-}
-
-.description {
-    width: 90%;
-    line-height:1.8em;
-    font-size: 0.9em;
-    margin-bottom: 0;
-}
-
-span {
-    font-size: 0.8em;
-    font-weight: var(--light);
-    filter: opacity(0.5);
+div,
+.article {
+  position: relative;
 }
 
 .article {
-    position: relative;
+  background-color: rgb(13, 14, 26);
+  background-image: radial-gradient(
+      at 4% 51%,
+      hsla(220, 87%, 16%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, hsla(240, 100%, 56%, 0.42) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(235, 0%, 0%, 1) 0px, transparent 50%);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+div {
+  overflow: hidden;
+}
+
+.text,
+.image {
+  position: absolute;
+}
+
+.text {
+  width: 80%;
+  padding-left: 2em;
+  z-index: 99;
+  bottom: 0;
+  padding-bottom: 4%;
+  color: rgb(var(--white));
+}
+
+.image {
+  width: 150%;
+  height: auto;
+  top: 0;
+  object-fit: cover;
+  filter: opacity(0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.headline {
+  font-size: 1.8em;
+  margin-bottom: -10px;
+}
+
+.description {
+  width: 90%;
+  line-height: 1.8em;
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+span {
+  font-size: 0.8em;
+  font-weight: var(--light);
+  filter: opacity(0.5);
 }
 
 @media only screen and (max-width: 1450px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-        'headline1 headline1'
-        'headline2 headline3';
-    }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      'headline1 headline1'
+      'headline2 headline3';
+  }
 
-    .text {
-        width: 90%;
-    }
+  .text {
+    width: 90%;
+  }
 
-    .headline {
-        font-size: 1.4em;
-        margin-bottom: 0;
-    }
+  .headline {
+    font-size: 1.4em;
+    margin-bottom: 0;
+  }
 
-    .description {
-        font-size: 0.8em;
-        line-height: 1.6em;
-    }
+  .description {
+    font-size: 0.8em;
+    line-height: 1.6em;
+  }
 
-    .image {
-        width: 130%;
-    }
+  .image {
+    width: 130%;
+  }
 
-    .container > div:nth-child(2) {
-        grid-area: headline2;
-    }
-    
-    .container > div:nth-child(3) {
-        grid-area: headline3;
-    }
+  .container > div:nth-child(2) {
+    grid-area: headline2;
+  }
+
+  .container > div:nth-child(3) {
+    grid-area: headline3;
+  }
 }
-
-
-
 
 @media only screen and (max-width: 900px) {
-    .container {
-        grid-template-areas:
-        'headline1'
-        'headline2'
-        'headline3';
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
+  .container {
+    grid-template-areas:
+      'headline1'
+      'headline2'
+      'headline3';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 
-    .headline {
-        font-size: 1.2em;
-        margin-bottom: 0;
-    }
+  .headline {
+    font-size: 1.2em;
+    margin-bottom: 0;
+  }
 
-    .description {
-        font-size: 0.8em;
-        line-height: 1.4em;
-    }
+  .description {
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
 }
-
-

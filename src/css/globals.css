@@ -5,19 +5,21 @@
 
   --white: 255, 255, 255;
   --black: 2, 0, 0;
+  --grey: 231, 231, 237;
   --accent: 41, 57, 241;
   --thin: 200;
   --light: 300;
   --regular: 400;
   --bold: 700;
   --bolder: 900;
-  --width-padding: 50px;
+  --width-padding: 60px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-color: rgb(var(--grey));
 }
 
 body {
@@ -28,8 +30,10 @@ a {
   font-weight: var(--bold);
   color: rgb(var(--white));
   text-decoration: none;
+  /* border: rgb(231, 231, 237); */
 }
 
 a:hover, a:active {
   color: rgb(var(--accent));
 }
+
