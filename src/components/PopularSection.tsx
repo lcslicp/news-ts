@@ -17,7 +17,6 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
             day: 'numeric',
             year: 'numeric',
           });
-
           let title = news.title;
 
           return (

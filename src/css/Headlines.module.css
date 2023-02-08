@@ -68,12 +68,24 @@ div {
   transition: all 0.3s ease-in-out;
 }
 
+.link:hover {
+  color: rgb(var(--grey));
+}
+
 .image:hover {
   transform: scale(1.1);
 }
 
 .headline {
-  font-size: 1.8em;
+  font-size: 2em;
+}
+
+.headlineSecondary {
+  font-size: 1.4em;
+}
+
+.headline,
+.headlineSecondary {
   margin-bottom: -10px;
 }
 
@@ -103,7 +115,8 @@ span {
     width: 90%;
   }
 
-  .headline {
+  .headline,
+  .headlineSecondary {
     font-size: 1.4em;
     margin-bottom: 0;
   }
@@ -136,7 +149,8 @@ span {
     grid-template-rows: 1fr 1fr 1fr;
   }
 
-  .headline {
+  .headline,
+  .headlineSecondary {
     font-size: 1.2em;
     margin-bottom: 0;
   }

@@ -12,14 +12,21 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
           day: 'numeric',
           year: 'numeric',
         });
+        let title = headline.title;
 
         return (
-          <div className={styles.article}>
+          <div className={styles.article} key={title}>
             <div className={styles.text}>
-            <a href={headline.url} key={headline.title} target='_blank'>
-              <h3 className={styles.headline}>
-                {headline.title}
-              </h3>
+              <a href={headline.url} target='_blank' className={styles.link}>
+                <h3
+                  className={
+                    headlines[0].title !== title
+                      ? `${styles.headlineSecondary}`
+                      : `${styles.headline}`
+                  }
+                >
+                  {title.length > 95 ? `${title.substring(0, 85)}...` : title}
+                </h3>
               </a>
               <p className={styles.description}>
                 {headline.description.substring(0, 91)}...
@@ -27,11 +34,11 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
               <span className={styles.description}>{date}</span>
             </div>
             <a href={headline.url} key={headline.title} target='_blank'>
-            <img
-              src={headline.urlToImage}
-              alt={headline.title}
-              className={styles.image}
-            />
+              <img
+                src={headline.urlToImage}
+                alt={headline.title}
+                className={styles.image}
+              />
             </a>
           </div>
         );
