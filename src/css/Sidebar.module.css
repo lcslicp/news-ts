@@ -15,11 +15,12 @@
 .tab {
     background-color: rgb(var(--accent));
     padding: 1em;
-    width: 25%;
+    width: 35%;
     margin: 0;
     color: rgb(var(--white));
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    text-align: center;
 }
 
 .divider  {
@@ -32,6 +33,7 @@
 .article {
     display: flex;
     flex-direction: column;
+    
 }
 
 .date {
@@ -55,4 +57,41 @@
 .description {
     font-size: 0.8em;
     margin: 0;
+}
+
+@media only screen and (max-width: 1450px) {
+
+    .article {
+        padding: 15px 30px 15px 30px;
+    }
+
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+
+    .tab {
+        width: 15%;
+    }
+
+    .title {
+        font-size: 1.1em;
+    }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .article {
+        padding: 5px 10px 5px 10px;
+    }
+
+        .tab {
+        width: 25%;
+    }
+
+    .title {
+        font-size: 1em;
+    }
 }

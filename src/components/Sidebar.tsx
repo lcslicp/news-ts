@@ -20,7 +20,7 @@ const Sidebar = (props: newsProps) => {
               <span className={styles.date}>{date}</span>
               <a href={news.url} target='_blank'><h4 className={styles.title}>{news.title}</h4></a>
               <p className={styles.description}>
-                {news.description.substring(0, 70)}...
+                {news.description.substring(0, 100)}...
               </p>
             </div>
           );
