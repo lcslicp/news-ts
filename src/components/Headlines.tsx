@@ -36,7 +36,7 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
             <a href={headline.url} key={headline.title} target='_blank'>
               <img
                 src={headline.urlToImage}
-                alt={headline.title}
+                alt={title}
                 className={styles.image}
               />
             </a>

@@ -1,16 +1,19 @@
 import React from 'react';
-import { popNews } from '../App';
+import { newsProps } from '../App';
 import styles from '../css/PopularSection.module.css';
+import Sidebar from './Sidebar';
 
-const PopularSection: React.FC<popNews> = ({ popularnews }) => {
+const PopularSection = (props: newsProps) => {
   return (
+    <section className={styles.popnews}>
     <section className={styles.container}>
-      <div className={styles.section}>
-        <h2>Popular News</h2>
-        <p>View More</p>
+      <div className={styles.sectionTitle}>
+        <h2 className={styles.tab}>Popular News</h2>
+        <a className={styles.link}>View More &#187;</a>
       </div>
+      <div className={styles.divider}></div>
       <div className={styles.articleContainer}>
-        {popularnews.map((news) => {
+        {props.popularnews.map((news) => {
           let publishedAt = new Date(news.publishedAt);
           let date = publishedAt.toLocaleDateString('default', {
             month: 'short',
@@ -27,7 +30,7 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
                 </p>
                 <div
                   className={
-                    popularnews[0].title !== title
+                    props.popularnews[0].title !== title
                       ? `${styles.secondaryContent}`
                       : `${styles.mainContent}`
                   }
@@ -36,14 +39,14 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
                     src={news.urlToImage}
                     alt={title}
                     className={
-                      popularnews[0].title !== title
+                      props.popularnews[0].title !== title
                         ? `${styles.image}`
                         : `${styles.imageMain}`
                     }
                   />
                   <div
                     className={
-                      popularnews[0].title !== title
+                      props.popularnews[0].title !== title
                         ? `${styles.text}`
                         : `${styles.textMain}`
                     }
@@ -52,7 +55,7 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
                       href={news.url}
                       target='_blank'
                       className={
-                        popularnews[0].title !== title
+                        props.popularnews[0].title !== title
                           ? `${styles.title}`
                           : `${styles.titleMain}`
                       }
@@ -61,7 +64,7 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
                     </a>
                     <p
                       className={
-                        popularnews[0].title !== title
+                        props.popularnews[0].title !== title
                           ? `${styles.description}`
                           : `${styles.descriptionMain}`
                       }
@@ -75,6 +78,8 @@ const PopularSection: React.FC<popNews> = ({ popularnews }) => {
           );
         })}
       </div>
+    </section>
+    <Sidebar latestnews={props.latestnews} popularnews={props.popularnews || ''}  />
     </section>
   );
 };

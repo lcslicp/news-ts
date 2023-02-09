@@ -4,7 +4,6 @@ import axios from './api/axios'
 import Header from './components/Header'
 import Headlines from './components/Headlines'
 import PopularSection from './components/PopularSection'
-import Sidebar from './components/Sidebar'
 import Carousel from './components/Carousel'
 import Footer from './components/Footer'
 
@@ -26,9 +25,11 @@ export interface headlines {
   headlines: Article[];
 }
 
-export interface popNews {
+export interface newsProps {
   popularnews: Article[];
+  latestnews: Article[];
 }
+
 
 interface nav {
   id: number,
@@ -43,6 +44,7 @@ export interface navProps {
 function App () {
   const [headlines, setHeadlines] = useState<Article[]>([]);
   const [popularNews, setPopularNews] = useState<Article[]>([]);
+  const [latestNews, setLatestNews] = useState<Article[]>([]);
 
 
   useEffect(() => {
@@ -98,9 +100,32 @@ function App () {
   } 
   }
 
+  const getLatestNews = async () => {
+
+    try {
+      const apiKey = localStorage.getItem('apiKey');
+    const { data } = await axios.get(
+      '/latestnews',
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+        },
+        withCredentials: true,
+      }
+    );
+
+    setLatestNews(data?.articles);
+    }catch (error) {
+      console.log(error)
+    
+  } 
+  }
+
   useEffect(() => {
     getHeadlines()
     getPopularHeadlines()
+    getLatestNews()
   }, [])
 
   const navLinks = [
@@ -119,8 +144,8 @@ function App () {
       headlines={headlines}
       />
       <PopularSection
-      popularnews={popularNews} />
-      <Sidebar />
+      popularnews={popularNews}
+      latestnews={latestNews} />
       <Carousel />
       <Footer />
     </main>

@@ -1,16 +1,46 @@
-.section {
+.popnews, .section {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  font-weight: var(--bold);
-  color: var(--black);
-  border-bottom: 1px solid rgb(var(--black));
+  gap: 20px;
+}
+
+.popnews {
+  padding-top: 20px;
+}
+
+.tab {
+  background-color: rgb(var(--accent));
+  padding: 1em;
+  width: 18%;
+  margin: 0;
+  color: rgb(var(--white));
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.divider  {
   width: 100%;
+  border-bottom: 3px solid rgb(var(--accent));
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.link {
+  color: rgb(var(--black));
+  padding-bottom: 10px;
 }
 
 .container {
-  width: 850px;
+  width: 70%;
   padding-left: var(--width-padding);
+  padding-right: 20px;
 }
 
 .articleContainer {
@@ -91,6 +121,7 @@
 
 .textMain {
   padding-left: 0;
+  width: 90%;
 }
 
 .titleMain {
@@ -116,10 +147,13 @@
 .description {
   margin-top: 3%;
   font-size: 0.6em;
-  line-height: 1.6em;
 }
 
 .descriptionMain {
   font-size: 0.8em;
-  line-height: 1.8em;
+  margin-top: -10px;
+}
+
+.description, .descriptionMain {
+  line-height: 1.6em;
 }

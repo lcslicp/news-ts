@@ -36,3 +36,20 @@ export const getPopularHeadlinesFromAPI = async (req, res) => {
         res.status(500).json({ message: 'Error fetching popular Headlines from API' });
     }
 }
+
+export const getLatestNewsFromAPI = async (req, res) => {
+    const apiKey = process.env.API_KEY;
+
+    try {
+        const response = await axios.get('https://newsapi.org/v2/everything?q=news%20today&sortBy=publishedAt',{ 
+    headers: {
+        'x-api-key': apiKey
+        }
+    });
+        const limitedData = response.data.articles.slice(0, 6);
+        res.json({ articles: limitedData });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error fetching Latest News from API' });
+    }
+}

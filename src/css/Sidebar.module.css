@@ -1,0 +1,58 @@
+.container {
+    width: 30%;
+    padding-right: var(--width-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(var(--white));
+    padding: 0 20px 20px 20px;
+}
+
+.tab {
+    background-color: rgb(var(--accent));
+    padding: 1em;
+    width: 25%;
+    margin: 0;
+    color: rgb(var(--white));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.divider  {
+    width: 100%;
+    border-bottom: 3px solid rgb(var(--accent));
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    padding-top: 1.3em;
+}
+
+.title, .description {
+    padding-top: 0.3em;
+}
+
+.title {
+    color: rgb(var(--black));
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.title:hover {
+    color: rgb(var(--accent));
+}
+
+.description {
+    font-size: 0.8em;
+    margin: 0;
+}
