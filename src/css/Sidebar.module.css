@@ -1,97 +1,93 @@
 .container {
-    width: 30%;
-    padding-right: var(--width-padding);
-    display: flex;
-    flex-direction: column;
+  width: 30%;
+  padding-right: var(--width-padding);
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: rgb(var(--white));
-    padding: 0 20px 20px 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(var(--white));
+  padding: 0 30px 30px 30px;
 }
 
 .tab {
-    background-color: rgb(var(--accent));
-    padding: 1em;
-    width: 35%;
-    margin: 0;
-    color: rgb(var(--white));
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    text-align: center;
+  background-color: rgb(var(--accent));
+  padding: 1em;
+  width: 35%;
+  margin: 0;
+  color: rgb(var(--white));
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
 }
 
-.divider  {
-    width: 100%;
-    border-bottom: 3px solid rgb(var(--accent));
-    display: flex;
-    flex-direction: column;
+.divider {
+  width: 100%;
+  border-bottom: 3px solid rgb(var(--accent));
+  display: flex;
+  flex-direction: column;
 }
 
 .article {
-    display: flex;
-    flex-direction: column;
-    
+  display: flex;
+  flex-direction: column;
 }
 
 .date {
-    padding-top: 1.3em;
+  padding-top: 1.3em;
 }
 
-.title, .description {
-    padding-top: 0.3em;
+.title,
+.description {
+  padding-top: 0.3em;
 }
 
 .title {
-    color: rgb(var(--black));
-    font-size: 0.9em;
-    margin: 0;
+  color: rgb(var(--black));
+  font-size: 0.9em;
+  margin: 0;
 }
 
 .title:hover {
-    color: rgb(var(--accent));
+  color: rgb(var(--accent));
 }
 
 .description {
-    font-size: 0.8em;
-    margin: 0;
+  font-size: 0.8em;
+  margin: 0;
 }
 
 @media only screen and (max-width: 1450px) {
+  .article {
+    padding: 15px 30px 15px 30px;
+  }
 
-    .article {
-        padding: 15px 30px 15px 30px;
-    }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
 
-    .container {
-        width: 100%;
-        margin: auto;
-    }
+  .tab {
+    width: 15%;
+  }
 
-    .tab {
-        width: 15%;
-    }
-
-    .title {
-        font-size: 1.1em;
-    }
-
-
+  .title {
+    font-size: 1.1em;
+  }
 }
 
 @media only screen and (max-width: 900px) {
+  .article {
+    padding: 5px 10px 5px 10px;
+  }
 
-    .article {
-        padding: 5px 10px 5px 10px;
-    }
+  .tab {
+    width: 25%;
+  }
 
-        .tab {
-        width: 25%;
-    }
-
-    .title {
-        font-size: 1em;
-    }
+  .title {
+    font-size: 1em;
+  }
 }

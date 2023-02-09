@@ -46,7 +46,7 @@ export const getLatestNewsFromAPI = async (req, res) => {
         'x-api-key': apiKey
         }
     });
-        const limitedData = response.data.articles.slice(0, 5);
+        const limitedData = response.data.articles.slice(0, 4);
         res.json({ articles: limitedData });
     } catch (error) {
         console.error(error);

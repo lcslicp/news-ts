@@ -1,4 +1,5 @@
-.popnews, .section {
+.popnews,
+.section {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -19,7 +20,7 @@
   text-align: center;
 }
 
-.divider  {
+.divider {
   width: 100%;
   border-bottom: 3px solid rgb(var(--accent));
   display: flex;
@@ -42,7 +43,6 @@
   width: 70%;
   padding-left: var(--width-padding);
   padding-right: 20px;
-  
 }
 
 .articleContainer {
@@ -156,7 +156,8 @@
   margin-top: -10px;
 }
 
-.description, .descriptionMain {
+.description,
+.descriptionMain {
   line-height: 1.6em;
 }
 
@@ -179,13 +180,13 @@
     max-height: 300px;
   }
 
-  .titleMain, .title {
+  .titleMain,
+  .title {
     font-size: 0.8em;
   }
 }
 
 @media only screen and (max-width: 900px) {
-
   .tab {
     width: 25%;
   }
@@ -211,16 +212,16 @@
     grid-row: 1;
     margin-top: -0.4em;
   }
-  
+
   .article:nth-child(2) {
     grid-row: 2;
     margin-top: -0.4em;
   }
-  
+
   .article:nth-child(3) {
     grid-row: 3;
   }
-  
+
   .article:nth-child(4) {
     grid-row: 4;
   }
@@ -231,7 +232,8 @@
     padding: 0;
   }
 
-  .imageMain, .image {
+  .imageMain,
+  .image {
     max-width: 120px;
     max-height: 90px;
   }
@@ -251,4 +253,3 @@
     font-size: 0.6em;
   }
 }
-
