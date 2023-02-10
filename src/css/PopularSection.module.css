@@ -49,7 +49,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 140px);
+  grid-template-rows: repeat(3, 150px);
   padding-top: 2em;
 }
 
@@ -108,8 +108,8 @@
 }
 
 .image {
-  max-width: 150px;
-  max-height: 100px;
+  max-width: 200px;
+  max-height: auto;
 }
 
 .imageMain {

@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import axios from './api/axios'
+import { useState, useEffect } from 'react';
+import axios from './api/axios';
 
-import Header from './components/Header'
-import Headlines from './components/Headlines'
-import PopularSection from './components/PopularSection'
-import Carousel from './components/Carousel'
-import Footer from './components/Footer'
+import Header from './components/Header';
+import Headlines from './components/Headlines';
+import PopularSection from './components/PopularSection';
+import Carousel from './components/Carousel';
+import Footer from './components/Footer';
 
 interface Article {
   source: {
@@ -30,126 +30,127 @@ export interface newsProps {
   latestnews: Article[];
 }
 
+export interface entNews {
+  entertainmentnews: Article[];
+}
 
 interface nav {
-  id: number,
-  href: string,
-  label: string,
+  id: number;
+  href: string;
+  label: string;
 }
 
 export interface navProps {
-  links: nav[]
+  links: nav[];
 }
 
-function App () {
+function App() {
   const [headlines, setHeadlines] = useState<Article[]>([]);
   const [popularNews, setPopularNews] = useState<Article[]>([]);
   const [latestNews, setLatestNews] = useState<Article[]>([]);
-
+  const [entertainmentNews, setEntertainmentNews] = useState<Article[]>([]);
 
   useEffect(() => {
     const fetchApiKey = async () => {
       const { data } = await axios.get('/key');
       localStorage.setItem('apiKey', data.apiKey);
-    }
+    };
 
     fetchApiKey();
-  })
+  });
 
   const getHeadlines = async () => {
-
     try {
       const apiKey = localStorage.getItem('apiKey');
-    const { data } = await axios.get(
-      '/headlines',
-      {
+      const { data } = await axios.get('/headlines', {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKey,
         },
         withCredentials: true,
-      }
-    );
+      });
 
-    setHeadlines(data?.articles);
-    }catch (error) {
-      console.log(error)
-    
-  } 
-  }
+      setHeadlines(data?.articles);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getPopularHeadlines = async () => {
-
     try {
       const apiKey = localStorage.getItem('apiKey');
-    const { data } = await axios.get(
-      '/popularnews',
-      {
+      const { data } = await axios.get('/popularnews', {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKey,
         },
         withCredentials: true,
-      }
-    );
+      });
 
-    setPopularNews(data?.articles);
-    }catch (error) {
-      console.log(error)
-    
-  } 
-  }
+      setPopularNews(data?.articles);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getLatestNews = async () => {
-
     try {
       const apiKey = localStorage.getItem('apiKey');
-    const { data } = await axios.get(
-      '/latestnews',
-      {
+      const { data } = await axios.get('/latestnews', {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': apiKey,
         },
         withCredentials: true,
-      }
-    );
+      });
 
-    setLatestNews(data?.articles);
-    }catch (error) {
-      console.log(error)
-    
-  } 
-  }
+      setLatestNews(data?.articles);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getEntertainmentNews = async () => {
+    try {
+      const apiKey = localStorage.getItem('apiKey');
+      const { data } = await axios.get('/entertainmentnews', {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+        },
+        withCredentials: true,
+      });
+
+      setEntertainmentNews(data?.articles);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    getHeadlines()
-    getPopularHeadlines()
-    getLatestNews()
-  }, [])
+    getHeadlines();
+    getPopularHeadlines();
+    getLatestNews();
+    getEntertainmentNews();
+  }, []);
 
   const navLinks = [
-    {id: 1, href: '/', label: 'Home'},
-    {id: 2, href: '/business', label: 'Business'},
-    {id: 3, href: '/health', label: 'Health'},
-    {id: 4, href: '/entertainment', label: 'Entertainment'},
-    {id: 5, href: '/sports', label: 'Sports'}
-  ]
-  
-  
+    { id: 1, href: '/', label: 'Home' },
+    { id: 2, href: '/business', label: 'Business' },
+    { id: 3, href: '/health', label: 'Health' },
+    { id: 4, href: '/entertainment', label: 'Entertainment' },
+    { id: 5, href: '/sports', label: 'Sports' },
+  ];
+
   return (
     <main>
       <Header links={navLinks} />
-      <Headlines
-      headlines={headlines}
-      />
-      <PopularSection
-      popularnews={popularNews}
-      latestnews={latestNews} />
-      <Carousel />
+      <Headlines headlines={headlines} />
+      <PopularSection popularnews={popularNews} latestnews={latestNews} />
+      <Carousel entertainmentnews={entertainmentNews} />
       <Footer />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;

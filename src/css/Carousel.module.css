@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    padding-top: 50px;
+    width: 200%;
+}
+
+.article {
+    padding-left: 50px;
+    padding-right: 30px;
+    border-right: 1px solid rgb(var(--black));
+}
+
+.image {
+    max-width: 200px;
+    max-height: auto;
+}
+

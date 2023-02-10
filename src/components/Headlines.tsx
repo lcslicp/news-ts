@@ -38,6 +38,7 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
                 src={headline.urlToImage}
                 alt={title}
                 className={styles.image}
+                loading='lazy'
               />
             </a>
           </div>

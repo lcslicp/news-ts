@@ -38,6 +38,7 @@ const PopularSection = (props: newsProps) => {
                   <img
                     src={news.urlToImage}
                     alt={title}
+                    loading='lazy'
                     className={
                       props.popularnews[0].title !== title
                         ? `${styles.image}`
@@ -69,7 +70,8 @@ const PopularSection = (props: newsProps) => {
                           : `${styles.descriptionMain}`
                       }
                     >
-                      {news.description.substring(0, 190)}...
+                      {props.popularnews[0].title !== title
+                          ? news.description.substring(0, 220) : news.description.substring(0, 255)}...
                     </p>
                   </div>
                 </div>
