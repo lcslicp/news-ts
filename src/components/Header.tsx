@@ -1,9 +1,16 @@
 import React from 'react';
-import { navProps } from '../App';
 import styles from '../css/Header.module.css';
-import logo from '../assets/logo/news-logo-black.svg';
+import logo from '../assets/logo/news-logo-full-color.svg';
 
-const Header: React.FC<navProps> = ({ links }) => {
+const Header = () => {
+  const links = [
+    { id: 1, href: '/', label: 'Home' },
+    { id: 2, href: '/business', label: 'Business' },
+    { id: 3, href: '/health', label: 'Health' },
+    { id: 4, href: '/entertainment', label: 'Entertainment' },
+    { id: 5, href: '/sports', label: 'Sports' },
+  ];
+
   return (
     <header className={`${styles.header} ${styles.fullwidth}`}>
       <nav

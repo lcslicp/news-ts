@@ -134,17 +134,9 @@ function App() {
     getEntertainmentNews();
   }, []);
 
-  const navLinks = [
-    { id: 1, href: '/', label: 'Home' },
-    { id: 2, href: '/business', label: 'Business' },
-    { id: 3, href: '/health', label: 'Health' },
-    { id: 4, href: '/entertainment', label: 'Entertainment' },
-    { id: 5, href: '/sports', label: 'Sports' },
-  ];
-
   return (
     <main>
-      <Header links={navLinks} />
+      <Header />
       <Headlines headlines={headlines} />
       <PopularSection popularnews={popularNews} latestnews={latestNews} />
       <Carousel entertainmentnews={entertainmentNews} />
