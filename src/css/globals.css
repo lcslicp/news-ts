@@ -6,6 +6,7 @@
   --white: 255, 255, 255;
   --black: 2, 0, 0;
   --grey: 231, 231, 237;
+  --darkgrey: 181, 181, 187;
   --accent: 47, 47, 151;
   --thin: 200;
   --light: 300;
@@ -30,7 +31,7 @@ a {
   font-weight: var(--bold);
   color: rgb(var(--white));
   text-decoration: none;
-  /* border: rgb(47, 47, 151); */
+  /* border: rgb(181, 181, 187); */
 }
 
 a:hover, a:active {

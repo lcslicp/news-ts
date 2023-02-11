@@ -1,19 +1,137 @@
+.container,
+.scroll,
+.carousel,
+.divider,
+.article {
+  display: flex;
+}
+
+.container,
+.divider,
+.article {
+  flex-direction: column;
+}
+
 .container {
-    display: flex;
-    flex-direction: row;
-    overflow: scroll;
-    padding-top: 50px;
-    width: 200%;
+  width: 92%;
+  margin: auto;
+  padding-top: 90px;
+}
+
+.scroll,
+.carousel {
+  flex-direction: row;
+}
+
+.scroll,
+.carousel,
+.divider,
+.article {
+  width: 100%;
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.link {
+  color: rgb(var(--black));
+  padding-bottom: 10px;
+  font-size: 0.8em;
+}
+
+.scroll {
+  align-items: center;
+}
+
+.carousel {
+  overflow: hidden;
+  padding-top: 50px;
+  transition: transform 1s ease-out;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  background-color: rgb(var(--accent));
+  padding: 1em;
+  width: 12%;
+  margin: 0;
+  color: rgb(var(--white));
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+
+.divider {
+  border-bottom: 3px solid rgb(var(--accent));
 }
 
 .article {
-    padding-left: 50px;
-    padding-right: 30px;
-    border-right: 1px solid rgb(var(--black));
+  border-right: 1px solid rgba(var(--black), 0.2);
+  justify-content: start;
+  padding: 0 3%;
+  height: 250px;
+}
+
+.article:last-child {
+  border-right: none;
 }
 
 .image {
-    max-width: 200px;
-    max-height: auto;
+  max-width: 200px;
+  max-height: auto;
+  padding-bottom: 1em;
 }
 
+.title {
+  margin-top: 0.4em;
+  color: rgb(var(--black));
+  font-size: 0.9em;
+}
+
+.title:hover {
+  color: rgb(var(--accent));
+}
+
+.btnPrev,
+.btnNext {
+  color: rgb(var(--black));
+  background-color: rgb(var(--darkgrey));
+  border: none;
+  font-size: 1em;
+  font-weight: var(--bold);
+  max-height: 50px;
+  padding: 1em 0.8em;
+  cursor: pointer;
+}
+
+.btnPrev:hover,
+.btnNext:hover {
+  color: rgb(var(--white));
+  background-color: rgb(var(--accent));
+}
+
+.btnPrev:disabled,
+.btnPrev:disabled:hover,
+.btnNext:disabled,
+.btnPrev:disabled:hover {
+  cursor: default;
+  filter: opacity(0.3);
+  color: rgb(var(--black));
+  background-color: rgb(var(--darkgrey));
+}
+
+.btnPrev {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.btnNext {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

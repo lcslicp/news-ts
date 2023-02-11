@@ -55,8 +55,9 @@
 }
 
 .description {
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin: 0;
+  line-height: 1.5em;
 }
 
 @media only screen and (max-width: 1450px) {

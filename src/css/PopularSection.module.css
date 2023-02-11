@@ -6,7 +6,7 @@
 }
 
 .popnews {
-  padding-top: 20px;
+  padding-top: 90px;
 }
 
 .tab {
@@ -37,6 +37,7 @@
 .link {
   color: rgb(var(--black));
   padding-bottom: 10px;
+  font-size: 0.8em;
 }
 
 .container {

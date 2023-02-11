@@ -76,7 +76,7 @@ export const getEntertainmentNewsFromAPI = async (req, res) => {
 
   try {
     const response = await axios.get(
-      'https://newsapi.org/v2/top-headlines?language=en&category=entertainment',
+      'https://newsapi.org/v2/top-headlines?language=en&category=entertainment&sortby=popularity',
       {
         headers: {
           'x-api-key': apiKey,
