@@ -102,13 +102,13 @@
 
 .imageMain,
 .image {
-  width: auto;
-  height: auto;
+  object-fit: fill;
+  border: 2px solid rgb(var(--black));
 }
 
 .image {
-  max-width: 200px;
-  max-height: auto;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .imageMain {
