@@ -1,6 +1,7 @@
 .section,
 .nav {
   display: flex;
+  background-color: rgb(var(--white));
 }
 
 .nav {
@@ -9,9 +10,9 @@
   align-items: center;
   background-color: rgb(var(--white));
   width: 100%;
-  border-bottom: 0.8px solid rgba(var(--black), 0.3);
-  gap: 1em;
   margin: 0;
+  border-top: 2px solid rgb(var(--black));
+  border-bottom: 2px solid rgb(var(--black));
 }
 
 .tabs {
@@ -20,7 +21,8 @@
   font-weight: var(--bold);
   font-size: 0.9em;
   cursor: pointer;
-  padding: 10px 1em;
+  border-right: 1px solid rgb(var(--black));
+  padding: 10px 20px;
 }
 
 .tabs,
@@ -28,13 +30,17 @@
   color: rgb(var(--black));
 }
 
+.tabs:first-child {
+  border-left: 1px solid rgb(var(--black));
+}
+
 .section {
   flex-direction: column;
 }
 
 .activeTab {
-  color: rgb(var(--accent));
-  border-bottom: 3px solid rgba(var(--accent));
+  color: rgb(var(--white));
+  background-color: rgb(var(--black));
 }
 
 .inactiveTab {

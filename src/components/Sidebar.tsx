@@ -1,5 +1,4 @@
-import React from 'react';
-import { newsProps } from '../App';
+import { newsProps } from '../Pages/Home';
 import styles from '../css/Sidebar.module.css';
 
 const Sidebar = (props: newsProps) => {
@@ -22,6 +21,7 @@ const Sidebar = (props: newsProps) => {
               <p className={styles.description}>
                 {news.description.substring(0, 200)}...
               </p>
+              <div className={styles.divider2}></div>
             </div>
           );
         })}

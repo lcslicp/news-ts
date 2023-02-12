@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../css/Footer.module.css';
-import logo from '../assets/logo/news-logo-white.svg';
+import logo from '../assets/logo/news-logo-black.svg';
 
 const Footer = () => {
   const quickLinks = [

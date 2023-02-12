@@ -1,5 +1,5 @@
 import styles from '../css/Header.module.css';
-import logo from '../assets/logo/news-logo-full-color.svg';
+import logo from '../assets/logo/news-logo-black.svg';
 
 interface navLinks {
   id: number;

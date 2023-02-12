@@ -2,7 +2,7 @@
   display: grid;
   width: 94%;
   height: 600px;
-  padding-top: 50px;
+  padding-top: var(--section-padding);
   grid-template-areas:
     'headline1 headline2'
     'headline1 headline3';
@@ -29,15 +29,8 @@ div,
 }
 
 .article {
-  background-color: rgb(13, 14, 26);
-  background-image: radial-gradient(
-      at 4% 51%,
-      hsla(220, 87%, 16%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 0%, hsla(240, 100%, 56%, 0.42) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(235, 0%, 0%, 1) 0px, transparent 50%);
-  border-radius: 10px;
+  filter: grayscale(1);
+  border: 2px solid rgb(var(--black));
   margin: 10px;
 }
 
@@ -63,8 +56,8 @@ div {
   width: 150%;
   height: auto;
   top: 0;
-  object-fit: cover;
-  filter: opacity(0.3);
+  object-fit: fill;
+  filter: brightness(0.4);
   transition: all 0.3s ease-in-out;
 }
 

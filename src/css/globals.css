@@ -4,16 +4,18 @@
   font-family: 'Work Sans', sans-serif;
 
   --white: 255, 255, 255;
-  --black: 2, 0, 0;
+  --black: 0, 0, 0;
   --grey: 231, 231, 237;
   --darkgrey: 181, 181, 187;
-  --accent: 47, 47, 151;
+  --secondary: 11, 13, 17;
+  --accent: 67, 67, 73;
   --thin: 200;
   --light: 300;
   --regular: 400;
   --bold: 700;
   --bolder: 900;
   --width-padding: 60px;
+  --section-padding: 50px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,17 +26,21 @@
 }
 
 body {
-    margin: auto;
+  margin: auto;
 }
 
 a {
   font-weight: var(--bold);
   color: rgb(var(--white));
   text-decoration: none;
-  /* border: rgb(181, 181, 187); */
+  /* border: rgb(67, 67, 73); */
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: rgb(var(--accent));
 }
 
+img {
+  filter: grayscale(1);
+}

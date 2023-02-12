@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import TabNavigation from './components/TabNavigation';
 import Home from './Pages/Home';
-import TypicalPage from './Pages/typicalPage';
+import TypicalPage from './Pages/TypicalPage';
 
 
 

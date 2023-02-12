@@ -6,33 +6,33 @@
 }
 
 .content {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: rgb(var(--white));
-  padding: 10px 30px 30px 30px;
+  padding: 10px 0 30px 0;
 }
 
 .tab {
-  background-color: rgb(var(--accent));
+  background-color: rgb(var(--black));
   padding: 1em;
   width: 35%;
   margin: 0;
   color: rgb(var(--white));
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   text-align: center;
 }
 
 .divider {
   width: 100%;
-  border-bottom: 3px solid rgb(var(--accent));
+  border-bottom: 2px solid rgb(var(--black));
   display: flex;
   flex-direction: column;
+}
+
+.divider2 {
+  border-bottom: 1px solid rgba(var(--black), 0.2);
 }
 
 .article {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
 }
 
 .date {
@@ -58,6 +58,7 @@
   font-size: 0.7em;
   margin: 0;
   line-height: 1.5em;
+  padding-bottom: 3em;
 }
 
 @media only screen and (max-width: 1450px) {

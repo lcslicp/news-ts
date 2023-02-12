@@ -6,23 +6,21 @@
 }
 
 .popnews {
-  padding-top: 90px;
+  padding-top: var(--section-padding);
 }
 
 .tab {
-  background-color: rgb(var(--accent));
+  background-color: rgb(var(--black));
   padding: 1em;
   width: 15%;
   margin: 0;
   color: rgb(var(--white));
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   text-align: center;
 }
 
 .divider {
   width: 100%;
-  border-bottom: 3px solid rgb(var(--accent));
+  border-bottom: 2px solid rgb(var(--black));
   display: flex;
   flex-direction: column;
 }
