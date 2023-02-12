@@ -53,7 +53,7 @@ const Footer = () => {
       </section>
       <div className={styles.footer}>
         <p className={styles.copyright}>
-          &#169; Copyright {year} &#183; All Rights Reserved.
+        &#169; {year} &#183; Website Designed &amp; Developed by <a href='https://github.com/lcslicp' target='_blank'>lcslicp </a> &#183; Content provided by <a href='https://newsapi.org/' target='_blank'>News API</a> 
         </p>
       </div>
     </footer>

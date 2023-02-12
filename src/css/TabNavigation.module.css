@@ -1,0 +1,43 @@
+.section,
+.nav {
+  display: flex;
+}
+
+.nav {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(var(--white));
+  width: 100%;
+  border-bottom: 0.8px solid rgba(var(--black), 0.3);
+  gap: 1em;
+  margin: 0;
+}
+
+.tabs {
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: var(--bold);
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 10px 1em;
+}
+
+.tabs,
+.inactiveTab {
+  color: rgb(var(--black));
+}
+
+.section {
+  flex-direction: column;
+}
+
+.activeTab {
+  color: rgb(var(--accent));
+  border-bottom: 3px solid rgba(var(--accent));
+}
+
+.inactiveTab {
+  list-style: none;
+  background-color: transparent;
+}

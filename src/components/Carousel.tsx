@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { entNews } from '../App';
+import { entNews } from '../Pages/Home';
 import styles from '../css/Carousel.module.css';
 
 const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {

@@ -2,7 +2,7 @@
   display: grid;
   width: 94%;
   height: 600px;
-  /* padding-top: 100px; */
+  padding-top: 50px;
   grid-template-areas:
     'headline1 headline2'
     'headline1 headline3';

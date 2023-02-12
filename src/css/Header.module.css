@@ -7,6 +7,20 @@
     color: rgb(var(--white));
 }
 
+.section {
+    max-height: fit-content;
+    max-width: fit-content;
+}
+
+.upperHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    margin: auto;
+}
+
 .fullwidth {
     width: 100%;
     height: 40px;
@@ -21,12 +35,28 @@
     justify-content: space-between;
 }
 
-.header, .logo {
-    padding: 20px 0;
+.logo {
+    padding: 30px 0;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.search > input {
+    background-color: rgb(var(--grey));
+    height: 2.2em;
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 1.3em 1em;
+    margin-right: 2em;
 }
 
 .header {
-    background-color: transparent;
+    height:fit-content;
+    background-color: rgb(var(--white));
 }
 
 .label {
@@ -34,22 +64,34 @@
 }
 
 .nav {
-    justify-content: flex-end;
-    width: 100vw;
+    justify-content: center;
+    font-size: 0.95em;
+    padding: 10px 0;
+    background-color: rgb(var(--white));
 }
 
 .logo {
     width: 10%;
     height: auto;
-    padding-left: var(--width-padding);
+}
+
+.activeTab {
+    color: rgb(var(--white));
+    background-color: rgb(var(--accent));
+}
+
+.inactiveTab {
+    color: rgb(var(--black));
+    background-color: transparent;
 }
 
 .navlinks {
     list-style-type: none;
     padding-right: var(--width-padding);
     visibility: visible;
-    gap: 10%;
-    width: 600px;
+    gap: 5%;
+    width: 100%;
+    text-transform: uppercase;
 }
 
 @media screen and (max-width: 1200px) {

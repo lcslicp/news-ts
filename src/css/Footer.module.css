@@ -56,6 +56,10 @@
 }
 
 .copyright {
-  color: rgb(var(--white));
   font-size: 0.7em;
+}
+
+.copyright > a, .copyright > a:hover, .copyright {
+    font-weight: var(--light);
+    color: rgb(var(--white));
 }
