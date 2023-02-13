@@ -19,7 +19,6 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
     <section className={styles.container}>
       <div className={styles.sectionTitle}>
         <h4 className={styles.tab}>Entertainment News</h4>
-        <a className={styles.link}>See All &#187;</a>
       </div>
       <div className={styles.divider}></div>
       <div className={styles.scroll}>

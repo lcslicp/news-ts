@@ -9,7 +9,6 @@ const PopularSection = (props: newsProps) => {
     <section className={styles.container}>
       <div className={styles.sectionTitle}>
         <h4 className={styles.tab}>Popular News</h4>
-        <a className={styles.link}>See All &#187;</a>
       </div>
       <div className={styles.divider}></div>
       <div className={styles.articleContainer}>

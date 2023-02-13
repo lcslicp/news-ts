@@ -1,37 +1,47 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from '../css/TabNavigation.module.css';
-import { navProps } from './Header';
 
-const Navbar: React.FC<navProps> = ({ links }) => {
+
+
+
+interface navLinks {
+  id: number;
+  label: string;
+  content: JSX.Element | null;
+}
+
+export interface navProps {
+  links: navLinks[];
+}
+
+const TabNavigation:React.FC<navProps> = ({ links }) => {
+
   const [selectedTab, setSelectedTab] = useState(links[0].id);
 
+
+  
   const tabList = links.map((tab) => (
     <li
       key={tab.id}
       className={`${styles.tabs} ${
         selectedTab === tab.id ? styles.activeTab : styles.inactiveTab
       }`}
-      onClick={() => setSelectedTab(tab.id)}
+      onClick={() => {
+        setSelectedTab(tab.id)
+      }}
     >
       {tab.label}
     </li>
   ));
 
-  const tabContent = links.map((content) => (
-    <div
-      key={content.id}
-      style={selectedTab === content.id ? {} : { display: 'none' }}
-    >
-      {content.content}
-    </div>
-  ));
+  const selectedTabContent = links.find((tab) => tab.id === selectedTab)?.content;
 
   return (
     <section className={styles.section}>
       <ul className={styles.nav}>{tabList}</ul>
-      <div>{tabContent}</div>
+      <div>{selectedTabContent}</div>
     </section>
   );
 };
 
-export default Navbar;
+export default TabNavigation;

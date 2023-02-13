@@ -1,15 +1,6 @@
+
 import styles from '../css/Header.module.css';
 import logo from '../assets/logo/news-logo-black.svg';
-
-interface navLinks {
-  id: number;
-  label: string;
-  content: JSX.Element;
-}
-
-export interface navProps {
-  links: navLinks[];
-}
 
 const Header = () => {
   return (
