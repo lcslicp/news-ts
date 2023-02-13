@@ -1,7 +1,7 @@
 .container {
   padding: var(--section-padding);
   width: 90%;
-  background-color: rgb(var(--white));
+  margin: auto;
 }
 
 .title {

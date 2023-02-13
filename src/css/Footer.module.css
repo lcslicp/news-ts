@@ -54,8 +54,6 @@
 }
 
 .copyright,
-.copyright > a,
-.copyright > a:hover,
 .copyright {
   font-size: 0.7em;
   font-weight: var(--light);

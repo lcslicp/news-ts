@@ -27,7 +27,7 @@ const About = () => {
           <br />
           <br />
           <em>NowNews</em> is not a real media entity or business; it is solely
-          created for the purpose of creating this personal project.
+          created for the purpose of this personal project.
         </p>
         <br />
         <h4 className={styles.title}>Site Limitations</h4>
@@ -42,7 +42,7 @@ const About = () => {
           <br />
           <br />
           If you are interested in testing out the user interface of the
-          website, you may visit the demo site that only uses placeholder
+          website without the limitations set upon by the API used, you may visit the demo site that only uses placeholder
           content.
         </p>
       </section>
