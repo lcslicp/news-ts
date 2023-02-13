@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import styles from '../css/Header.module.css';
 import logo from '../assets/logo/news-logo-black.svg';
 
@@ -6,7 +7,7 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${styles.fullwidth}`}>
       <div className={styles.upperHeader}>
-        <img src={logo} alt='news-logo' className={styles.logo} />
+        <Link to={'/'}className={styles.logo}><img src={logo} alt='news-logo'  /></Link> 
         <div className={styles.search}>
           <input
             type='search'

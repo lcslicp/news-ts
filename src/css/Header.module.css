@@ -67,6 +67,7 @@
 .header {
   height: fit-content;
   background-color: rgb(var(--white));
+  border-bottom: 2px solid rgb(var(--black));
 }
 
 .label {
