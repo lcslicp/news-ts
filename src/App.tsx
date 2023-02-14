@@ -1,7 +1,6 @@
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
-
 import Home from './Pages/Home';
 import TypicalPage from './Pages/TypicalPage';
 
@@ -16,8 +15,7 @@ function App() {
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage key='health'
-      categoryQuery='health' />,
+      content: <TypicalPage key='health' categoryQuery='health' />,
     },
     {
       id: 4,
@@ -29,8 +27,7 @@ function App() {
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage key='sports'
-      categoryQuery='sports' />,
+      content: <TypicalPage key='sports' categoryQuery='sports' />,
     },
   ];
 

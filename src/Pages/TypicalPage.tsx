@@ -3,8 +3,11 @@ import axios from '../api/axios';
 import styles from '../css/TypicalPage.module.css';
 import { Article } from './Home';
 
+import SkeletonLoading from '../components/loading screens/SkeletonLoading';
+
 const typicalPage = (props: { categoryQuery: string }) => {
   const [newContent, setNewContent] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const getNewsbyCategory = useMemo(() => {
     async function fetchNewsbyCategory() {
@@ -33,23 +36,35 @@ const typicalPage = (props: { categoryQuery: string }) => {
     getNewsbyCategory();
   }, [props.categoryQuery]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
   return (
     <section className={styles.container}>
-      {newContent.map((content) => {
+      {loading ? (
+        <SkeletonLoading />
+      ) : (
+        newContent.map((content) => {
           let publishedAt = new Date(content.publishedAt);
           let date = publishedAt.toLocaleDateString('default', {
             month: 'short',
             day: 'numeric',
             year: 'numeric',
           });
-        return (
-        <div key={content.title} className={styles.article}>
-          <span>{date}</span>
-          <a href={content.url} target='_blank'><h2 className={styles.title}>{content.title}</h2></a>
-          <p className={styles.description}>{content.description}</p>
-        </div>
-      );
-        })}
+          return (
+            <div key={content.title} className={styles.article}>
+              <span>{date}</span>
+              <a href={content.url} target='_blank'>
+                <h2 className={styles.title}>{content.title}</h2>
+              </a>
+              <p className={styles.description}>{content.description}</p>
+            </div>
+          );
+        })
+      )}
     </section>
   );
 };

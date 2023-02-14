@@ -1,10 +1,9 @@
 .container {
-  background-color: rgb(var(--white));
+  background-color: rgb(var(--black));
   max-height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-top: 2px solid rgb(var(--black));
 }
 
 .section {
@@ -18,7 +17,7 @@
 .title {
   font-weight: var(--bold);
   font-size: 0.9em;
-  color: rgb(var(--black));
+  color: rgb(var(--white));
   margin-top: 0;
   margin-bottom: 1em;
 }
@@ -30,7 +29,7 @@
 }
 
 .links {
-  color: rgba(var(--black), 0.8);
+  color: rgba(var(--white), 0.8);
 }
 
 .links:hover {
@@ -45,12 +44,11 @@
 }
 
 .footer {
-  border-top: 2px solid rgb(var(--black));
-  background-color: rgb(var(--white));
+  background-color: rgb(var(--black));
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(var(--black));
+  border-top: 0.6px solid rgba(var(--white), 0.6);
 }
 
 .copyright,

@@ -1,5 +1,5 @@
 import styles from '../../css/Footer.module.css';
-import logo from '../../assets/logo/news-logo-black.svg';
+import logo from '../../assets/logo/news-logo-white.svg';
 
 const Footer = () => {
   const quickLinks = [
