@@ -32,6 +32,7 @@ export const getHeadlinesbyCategoryFromAPI = async (req, res) => {
       },
       params: {
         category: category,
+        language: 'en',
       },
     });
     const limitedData = response.data.articles.slice(0, 5);

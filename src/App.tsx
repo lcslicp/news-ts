@@ -11,22 +11,26 @@ function App() {
     {
       id: 2,
       label: 'Business',
-      content: <TypicalPage categoryQuery='business' />,
+      content: <TypicalPage key='business' categoryQuery='business' />,
     },
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage categoryQuery='health' />,
+      content: <TypicalPage key='health'
+      categoryQuery='health' />,
     },
     {
       id: 4,
       label: 'Entertainment',
-      content: <TypicalPage categoryQuery='entertainment' />,
+      content: (
+        <TypicalPage key='entertainment' categoryQuery='entertainment' />
+      ),
     },
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage categoryQuery='sports' />,
+      content: <TypicalPage key='sports'
+      categoryQuery='sports' />,
     },
   ];
 

@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import axios from '../api/axios';
 
 import Headlines from '../components/feature/Headlines';
 import PopularSection from '../components/feature/PopularSection';
 import Carousel from '../components/feature/Carousel';
 
-interface Article {
+export interface Article {
   source: {
     id: string | null;
     name: string;
@@ -47,80 +47,90 @@ const Home = () => {
     fetchApiKey();
   });
 
-  const getHeadlines = async () => {
-    try {
-      const apiKey = localStorage.getItem('apiKey');
-      const { data } = await axios.get('/headlines', {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        withCredentials: true,
-      });
-
-      setHeadlines(data?.articles);
-    } catch (error) {
-      console.log(error);
+  const getHeadlines = useMemo(() => {
+    async function fetchHeadlines() {
+      try {
+        const apiKey = localStorage.getItem('apiKey');
+        const { data } = await axios.get('/headlines', {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          withCredentials: true,
+        });
+        setHeadlines(data?.articles);
+        
+      } catch (error) {
+        console.log(error);
+      }
     }
-  };
+    return fetchHeadlines;
+  }, []);
 
-  const getPopularHeadlines = async () => {
-    try {
-      const apiKey = localStorage.getItem('apiKey');
-      const { data } = await axios.get('/popularnews', {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        withCredentials: true,
-      });
-
-      setPopularNews(data?.articles);
-    } catch (error) {
-      console.log(error);
+  const getPopularHeadlines = useMemo(() => {
+    async function fetchPopularHeadlines() {
+      try {
+        const apiKey = localStorage.getItem('apiKey');
+        const { data } = await axios.get('/popularnews', {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          withCredentials: true,
+        });
+        setPopularNews(data?.articles);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  };
+    return fetchPopularHeadlines;
+  }, []);
 
-  const getLatestNews = async () => {
-    try {
-      const apiKey = localStorage.getItem('apiKey');
-      const { data } = await axios.get('/latestnews', {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        withCredentials: true,
-      });
-
-      setLatestNews(data?.articles);
-    } catch (error) {
-      console.log(error);
+  const getLatestNews = useMemo(() => {
+    async function fetchLatestNews() {
+      try {
+        const apiKey = localStorage.getItem('apiKey');
+        const { data } = await axios.get('/latestnews', {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          withCredentials: true,
+        });
+        setLatestNews(data?.articles);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  };
+    return fetchLatestNews;
+  }, []);
 
-  const getEntertainmentNews = async () => {
-    try {
-      const apiKey = localStorage.getItem('apiKey');
-      const { data } = await axios.get('/entertainmentnews', {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        withCredentials: true,
-      });
-
-      setEntertainmentNews(data?.articles);
-    } catch (error) {
-      console.log(error);
+  const getEntertainmentNews = useMemo(() => {
+    async function fetchEntertainmentNews() {
+      try {
+        const apiKey = localStorage.getItem('apiKey');
+        const { data } = await axios.get('/entertainmentnews', {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          withCredentials: true,
+        });
+        setEntertainmentNews(data?.articles);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  };
+    return fetchEntertainmentNews;
+  }, []);
 
-  useEffect(() => {
+  useEffect(()=> {
     getHeadlines();
     getPopularHeadlines();
     getLatestNews();
     getEntertainmentNews();
-  }, []);
+  }, [])
+
   return (
     <main>
       <Headlines headlines={headlines} />
