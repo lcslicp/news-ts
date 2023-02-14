@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from '../api/axios';
 
-import Headlines from '../components/Headlines';
-import PopularSection from '../components/PopularSection';
-import Carousel from '../components/Carousel';
+import Headlines from '../components/feature/Headlines';
+import PopularSection from '../components/feature/PopularSection';
+import Carousel from '../components/feature/Carousel';
 
 interface Article {
   source: {

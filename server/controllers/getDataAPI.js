@@ -80,7 +80,7 @@ export const getLatestNewsFromAPI = async (req, res) => {
     const filteredData = response.data.articles.filter(
       (article) => article.urlToImage !== null
     );
-    const limitedData = filteredData.slice(0, 4);
+    const limitedData = filteredData.slice(0, 3);
     res.json({ articles: limitedData });
   } catch (error) {
     console.error(error);

@@ -1,5 +1,5 @@
-import { newsProps } from '../Pages/Home';
-import styles from '../css/Sidebar.module.css';
+import { newsProps } from '../../Pages/Home';
+import styles from '../../css/Sidebar.module.css';
 
 const Sidebar = (props: newsProps) => {
   return (

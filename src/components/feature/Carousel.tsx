@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { entNews } from '../Pages/Home';
-import styles from '../css/Carousel.module.css';
+import { entNews } from '../../Pages/Home';
+import styles from '../../css/Carousel.module.css';
 
 const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

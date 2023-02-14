@@ -1,13 +1,11 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-import TabNavigation from './components/TabNavigation';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+import TabNavigation from './components/feature/TabNavigation';
 
 import Home from './Pages/Home';
 import TypicalPage from './Pages/TypicalPage';
 
-
 function App() {
-
   const links = [
     { id: 1, label: 'Home', content: <Home /> },
     {
@@ -23,9 +21,7 @@ function App() {
     {
       id: 4,
       label: 'Entertainment',
-      content: (
-        <TypicalPage categoryQuery='entertainment' />
-      ),
+      content: <TypicalPage categoryQuery='entertainment' />,
     },
     {
       id: 5,

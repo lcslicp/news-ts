@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import styles from '../css/Header.module.css';
+import styles from '../../css/Header.module.css';
 import logo from '../assets/logo/news-logo-black.svg';
 
 const Header = () => {
