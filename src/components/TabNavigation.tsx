@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import styles from '../css/TabNavigation.module.css';
-
-
-
+import TypicalPage from '../Pages/TypicalPage';
 
 interface navLinks {
   id: number;
@@ -14,12 +12,10 @@ export interface navProps {
   links: navLinks[];
 }
 
-const TabNavigation:React.FC<navProps> = ({ links }) => {
-
+const TabNavigation: React.FC<navProps> = ({ links }) => {
   const [selectedTab, setSelectedTab] = useState(links[0].id);
+  const selectedTabData = links.find(tab => tab.id === selectedTab);
 
-
-  
   const tabList = links.map((tab) => (
     <li
       key={tab.id}
@@ -27,19 +23,21 @@ const TabNavigation:React.FC<navProps> = ({ links }) => {
         selectedTab === tab.id ? styles.activeTab : styles.inactiveTab
       }`}
       onClick={() => {
-        setSelectedTab(tab.id)
+        setSelectedTab(tab.id);
       }}
     >
       {tab.label}
     </li>
   ));
 
-  const selectedTabContent = links.find((tab) => tab.id === selectedTab)?.content;
-
   return (
     <section className={styles.section}>
       <ul className={styles.nav}>{tabList}</ul>
-      <div>{selectedTabContent}</div>
+      <div>{selectedTabData && (
+        <TypicalPage key={selectedTabData.label} categoryQuery={selectedTabData.label.toLowerCase()} />
+      )}
+
+      </div>
     </section>
   );
 };

@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import axios from '../api/axios';
 import styles from '../css/TypicalPage.module.css';
+import { Article } from './Home';
 
 const typicalPage = (props: { categoryQuery: string }) => {
-  const [newContent, setNewContent] = useState<JSX.Element[]>([]);
+  const [newContent, setNewContent] = useState<Article[]>([]);
 
-  const getNewsbyCategory = async () => {
-    const { categoryQuery } = props;
-
-    try {
-      const apiKey = localStorage.getItem('apiKey');
-      const { data } = await axios.get('/category', {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-        },
-        params: {
-          category: categoryQuery,
-        },
-        withCredentials: true,
-      });
-
-      setNewContent(data?.articles);
-      console.log(newContent);
-    } catch (error) {
-      console.log(error);
+  const getNewsbyCategory = useMemo(() => {
+    async function fetchNewsbyCategory() {
+      try {
+        const apiKey = localStorage.getItem('apiKey');
+        const { categoryQuery } = props;
+        const { data } = await axios.get('/category', {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': apiKey,
+          },
+          params: {
+            category: categoryQuery,
+          },
+          withCredentials: true,
+        });
+        setNewContent(data?.articles);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  };
+    return fetchNewsbyCategory;
+  }, []);
 
   useEffect(() => {
     getNewsbyCategory();
@@ -34,6 +35,21 @@ const typicalPage = (props: { categoryQuery: string }) => {
 
   return (
     <section className={styles.container}>
+      {newContent.map((content) => {
+          let publishedAt = new Date(content.publishedAt);
+          let date = publishedAt.toLocaleDateString('default', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+          });
+        return (
+        <div key={content.title} className={styles.article}>
+          <span>{date}</span>
+          <a href={content.url} target='_blank'><h2 className={styles.title}>{content.title}</h2></a>
+          <p className={styles.description}>{content.description}</p>
+        </div>
+      );
+        })}
     </section>
   );
 };
