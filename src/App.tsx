@@ -1,8 +1,8 @@
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
-import Home from './Pages/Home';
-import TypicalPage from './Pages/TypicalPage';
+import Home from './pages/Home';
+import TypicalPage from './pages/TypicalPage';
 
 function App() {
   const links = [

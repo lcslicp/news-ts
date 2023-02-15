@@ -50,6 +50,7 @@ div {
   bottom: 0;
   padding-bottom: 4%;
   color: rgb(var(--white));
+  text-shadow: rgb(var(--black)) 1px 0 5px;
 }
 
 .image {
@@ -59,6 +60,7 @@ div {
   object-fit: fill;
   filter: brightness(0.4);
   transition: all 0.3s ease-in-out;
+  background-color: rgb(var(--grey));
 }
 
 .link:hover {

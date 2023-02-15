@@ -4,13 +4,16 @@ import styles from '../css/TypicalPage.module.css';
 import { Article } from './Home';
 
 import SkeletonLoading from '../components/loading screens/SkeletonLoading';
+import ErrorFetchingAPI from '../components/empty UI state/ErrorFetchingAPI';
 
 const typicalPage = (props: { categoryQuery: string }) => {
   const [newContent, setNewContent] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
 
   const getNewsbyCategory = useMemo(() => {
     async function fetchNewsbyCategory() {
+      setLoading(true);
       try {
         const apiKey = localStorage.getItem('apiKey');
         const { categoryQuery } = props;
@@ -27,7 +30,9 @@ const typicalPage = (props: { categoryQuery: string }) => {
         setNewContent(data?.articles);
       } catch (error) {
         console.log(error);
+        setError(true);
       }
+      setLoading(false);
     }
     return fetchNewsbyCategory;
   }, []);
@@ -36,16 +41,12 @@ const typicalPage = (props: { categoryQuery: string }) => {
     getNewsbyCategory();
   }, [props.categoryQuery]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
-
   return (
     <section className={styles.container}>
       {loading ? (
         <SkeletonLoading />
+      ) : error ? (
+        <ErrorFetchingAPI />
       ) : (
         newContent.map((content) => {
           let publishedAt = new Date(content.publishedAt);

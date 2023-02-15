@@ -1,5 +1,5 @@
 import React from 'react';
-import { newsProps } from '../../Pages/Home';
+import { newsProps } from '../../pages/Home';
 import styles from '../../css/PopularSection.module.css';
 import Sidebar from './Sidebar';
 
