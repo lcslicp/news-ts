@@ -4,11 +4,15 @@ export const getHeadlinesFromAPI = async (req, res) => {
   try {
     const apiKey = process.env.API_KEY;
     const response = await axios.get(
-      'https://newsapi.org/v2/top-headlines?country=ph&category=General',
+      'https://newsapi.org/v2/top-headlines',
       {
         headers: {
           'x-api-key': apiKey,
         },
+        params: {
+          country: 'ph',
+          category: 'General',
+        }
       }
     );
     const filteredData = response.data.articles.filter(
@@ -47,11 +51,16 @@ export const getPopularHeadlinesFromAPI = async (req, res) => {
   try {
     const apiKey = process.env.API_KEY;
     const response = await axios.get(
-      'https://newsapi.org/v2/everything?q=news%20today&sortBy=popularity&language=en',
+      'https://newsapi.org/v2/everything',
       {
         headers: {
           'x-api-key': apiKey,
         },
+        params: {
+          q: 'news today',
+          sortBy: 'popularity',
+          language: 'en',
+        }
       }
     );
     const filteredData = response.data.articles.filter(
@@ -71,11 +80,16 @@ export const getLatestNewsFromAPI = async (req, res) => {
   try {
     const apiKey = process.env.API_KEY;
     const response = await axios.get(
-      'https://newsapi.org/v2/everything?q=news%20today&sortBy=publishedAt&language=en',
+      'https://newsapi.org/v2/everything',
       {
         headers: {
           'x-api-key': apiKey,
         },
+        params: {
+          q: 'news today',
+          sortBy: 'publishedAt',
+          language: 'en',
+        }
       }
     );
     const filteredData = response.data.articles.filter(
@@ -93,11 +107,16 @@ export const getEntertainmentNewsFromAPI = async (req, res) => {
   try {
     const apiKey = process.env.API_KEY;
     const response = await axios.get(
-      'https://newsapi.org/v2/top-headlines?language=en&category=entertainment&sortby=popularity',
+      'https://newsapi.org/v2/top-headlines',
       {
         headers: {
           'x-api-key': apiKey,
         },
+        params: {
+          language: 'en',
+          category: 'entertainment',
+          sortBy: 'popularity',
+        }
       }
     );
     const filteredData = response.data.articles.filter(
