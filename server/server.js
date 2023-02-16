@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import apiRouter from './routes/newsRoutes.js';
-import apiKeyRouter from './routes/apiKey.js';
 
 dotenv.config();
 const app = express();
@@ -21,7 +20,6 @@ app.use(function (req, res, next) {
   });
 
 app.use('/api', apiRouter);
-app.use('/api', apiKeyRouter);
 
 const port = process.env.PORT || 5000;
 

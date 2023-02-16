@@ -1,5 +1,4 @@
-import React from 'react';
-import styles from '../../css/LoadingSpinner.module.css'
+import styles from '../../css/loading screens/LoadingSpinner.module.css'
 
 const LoadingSpinner = () => {
   return (

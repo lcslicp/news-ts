@@ -1,6 +1,6 @@
 import React from 'react';
 import { headlines } from '../../pages/Home';
-import styles from '../../css/Headlines.module.css';
+import styles from '../../css/feature/Headlines.module.css';
 
 const Headlines: React.FC<headlines> = ({ headlines }) => {
   return (

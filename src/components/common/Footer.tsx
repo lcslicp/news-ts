@@ -1,4 +1,4 @@
-import styles from '../../css/Footer.module.css';
+import styles from '../../css/common/Footer.module.css';
 import logo from '../../assets/logo/news-logo-white.svg';
 
 const Footer = () => {

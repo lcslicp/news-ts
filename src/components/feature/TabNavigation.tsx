@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../../css/TabNavigation.module.css';
+import styles from '../../css/feature/TabNavigation.module.css';
 
 interface navLinks {
   id: number;

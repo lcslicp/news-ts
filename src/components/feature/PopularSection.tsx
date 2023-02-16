@@ -1,6 +1,5 @@
-import React from 'react';
 import { newsProps } from '../../pages/Home';
-import styles from '../../css/PopularSection.module.css';
+import styles from '../../css/feature/PopularSection.module.css';
 import Sidebar from './Sidebar';
 
 const PopularSection = (props: newsProps) => {

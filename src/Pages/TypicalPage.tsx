@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import axios from '../api/axios';
-import styles from '../css/TypicalPage.module.css';
+import styles from '../css/pages/TypicalPage.module.css';
 import { Article } from './Home';
 
 import SkeletonLoading from '../components/loading screens/SkeletonLoading';

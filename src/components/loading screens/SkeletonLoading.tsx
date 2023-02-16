@@ -1,4 +1,4 @@
-import styles from '../../css/SkeletonLoading.module.css';
+import styles from '../../css/loading screens/SkeletonLoading.module.css';
 
 const CategoryPageLoading = () => {
   return (
