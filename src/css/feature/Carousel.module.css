@@ -16,7 +16,7 @@
   width: 92%;
   margin: auto;
   padding-top: var(--section-padding);
-  padding-bottom: 90px;
+  padding-bottom: 150px;
 }
 
 .scroll,
@@ -84,7 +84,7 @@
 .image {
   max-width: 200px;
   max-height: 100px;
-  object-fit: fill;
+  object-fit: cover;
   object-position: top;
   margin-bottom: 1em;
   border: 2px solid rgb(var(--black));

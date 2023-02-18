@@ -6,9 +6,11 @@ import styles from '../css/pages/About.module.css';
 const About = () => {
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
       <section className={styles.container}>
-        <Link to='/' className={styles.nav}>&#171; Back to Homepage</Link>
+        <Link to='/' className={styles.nav}>
+          &#171; Back to Homepage
+        </Link>
         <h4 className={styles.title}>About</h4>
         <p className={styles.description}>
           This website displays information sourced from{' '}
@@ -18,8 +20,8 @@ const About = () => {
           . The content displayed on this site is the property of News API and
           is used with permission. This site does not claim ownership of the
           content and makes no representations or warranties regarding its
-          accuracy or completeness. The design and development of
-          this website was carried out by{' '}
+          accuracy or completeness. The design and development of this website
+          was carried out by{' '}
           <a href='https://github.com/lcslicp' target='_blank'>
             lcslicp
           </a>{' '}
@@ -30,7 +32,9 @@ const About = () => {
           created for the purpose of this personal project.
         </p>
         <br />
-        <h4 className={styles.title} id='sitelimitations'>Site Limitations</h4>
+        <h4 className={styles.title} id='sitelimitations'>
+          Site Limitations
+        </h4>
         <p className={styles.description}>
           Please note that the information displayed on this website is subject
           to the limitations set forth by the API provider. Specifically, the
@@ -41,9 +45,9 @@ const About = () => {
           forth by News API.
           <br />
           <br />
-          If you are interested in testing out the user interface of the
-          website without the limitations set upon by the API used, you may visit the demo site that uses placeholder
-          content.
+          If you are interested in testing out the user interface of the website
+          without the limitations set upon by the API used, you may visit the
+          demo site that uses placeholder content.
         </p>
       </section>
       <Footer />

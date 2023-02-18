@@ -5,8 +5,12 @@ import { Article } from './Home';
 
 import SkeletonLoading from '../components/loading screens/SkeletonLoading';
 import ErrorFetchingAPI from '../components/empty UI state/ErrorFetchingAPI';
+import NotFound from '../components/empty UI state/NotFound';
 
-const typicalPage = (props: { categoryQuery: string }) => {
+const typicalPage = (props: {
+  categoryQuery: string | null;
+  query: string | null;
+}) => {
   const [newContent, setNewContent] = useState<Article[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
@@ -16,7 +20,7 @@ const typicalPage = (props: { categoryQuery: string }) => {
       setLoading(true);
       try {
         const apiKey = localStorage.getItem('apiKey');
-        const { categoryQuery } = props;
+        const { categoryQuery, query } = props;
         const { data } = await axios.get('/category', {
           headers: {
             'Content-Type': 'application/json',
@@ -24,6 +28,7 @@ const typicalPage = (props: { categoryQuery: string }) => {
           },
           params: {
             category: categoryQuery,
+            q: query,
           },
           withCredentials: true,
         });
@@ -47,6 +52,8 @@ const typicalPage = (props: { categoryQuery: string }) => {
         <SkeletonLoading />
       ) : error ? (
         <ErrorFetchingAPI />
+      ) : newContent.length === 0 ? (
+        <NotFound />
       ) : (
         newContent.map((content) => {
           let publishedAt = new Date(content.publishedAt);

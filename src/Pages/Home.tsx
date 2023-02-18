@@ -103,6 +103,7 @@ const Home = () => {
 
   const getLatestNews = useMemo(() => {
     async function fetchLatestNews() {
+      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: true });
       try {
         const apiKey = localStorage.getItem('apiKey');
         const { data } = await axios.get('/latestnews', {
@@ -117,6 +118,7 @@ const Home = () => {
         console.log(error);
         setError(true);
       }
+      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: false });
     }
     return fetchLatestNews;
   }, []);
@@ -160,7 +162,7 @@ const Home = () => {
           ) : (
             <Headlines headlines={headlines} />
           )}
-          {state.loadingPopularHeadlines ? (
+          {state.loadingPopularHeadlines && state.loadingLatestNews ? (
             <LoadingSpinner />
           ) : (
             <PopularSection popularnews={popularNews} latestnews={latestNews} />

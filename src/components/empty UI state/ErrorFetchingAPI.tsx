@@ -12,7 +12,11 @@ const ErrorFetchingAPI = () => {
       <p className={styles.title}>Error Fetching Data</p>
       <p className={styles.text}>
         Uh-oh! Looks like we're having trouble getting the data we need right
-        now due to this site's limitations. <a href='/about#sitelimitations'>Learn More.</a>{' '}
+        now due to this site's limitations.{' '}
+        <a href='/about#sitelimitations'>
+          <br />
+          Learn More.
+        </a>{' '}
       </p>
     </section>
   );

@@ -1,26 +1,31 @@
-import { useState } from 'react';
 import styles from '../../css/feature/TabNavigation.module.css';
+import { useState } from 'react';
+import { navLinks } from '../../App';
 
-interface navLinks {
-  id: number;
-  label: string;
-  content: JSX.Element | null;
-}
-
-export interface navProps {
+interface TabNavigationProps {
   links: navLinks[];
+  query: string;
+  selectedTab: number | null;
+  setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const TabNavigation: React.FC<navProps> = ({ links }) => {
-  const [selectedTab, setSelectedTab] = useState(links[0].id);
-
+const TabNavigation: React.FC<TabNavigationProps> = ({
+  links,
+  query,
+  selectedTab,
+  setSelectedTab,
+}) => {
+  const [queryLength, setQueryLength] = useState<number>(0);
   const tabList = links.map((tab) => (
     <li
       key={tab.id}
       className={`${styles.tabs} ${
-        selectedTab === tab.id ? styles.activeTab : styles.inactiveTab
+        selectedTab === tab.id && selectedTab !== 6
+          ? styles.activeTab
+          : styles.inactiveTab
       }`}
       onClick={() => {
+        setQueryLength(0);
         setSelectedTab(tab.id);
       }}
     >
