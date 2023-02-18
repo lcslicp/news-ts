@@ -44,7 +44,7 @@ const typicalPage = (props: {
 
   useEffect(() => {
     getNewsbyCategory();
-  }, [props.categoryQuery]);
+  }, [props.categoryQuery, props.query]);
 
   return (
     <section className={styles.container}>

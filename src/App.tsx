@@ -28,34 +28,34 @@ function App(props: navLinks[]) {
       id: 2,
       label: 'Business',
       content: (
-        <TypicalPage key='business' categoryQuery='business' query={null} />
+        <TypicalPage key={`business-${query}`} categoryQuery='business' query={query} />
       ),
     },
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage key='health' categoryQuery='health' query={null} />,
+      content: <TypicalPage key={`health-${query}`} categoryQuery='health' query={query} />,
     },
     {
       id: 4,
       label: 'Entertainment',
       content: (
         <TypicalPage
-          key='entertainment'
+          key={`entertainment-${query}`}
           categoryQuery='entertainment'
-          query={null}
+          query={query}
         />
       ),
     },
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage key='sports' categoryQuery='sports' query={null} />,
+      content: <TypicalPage key={`sports-${query}`} categoryQuery='sports' query={query} />,
     },
     {
       id: 6,
       label: null,
-      content: <TypicalPage key={null} categoryQuery={null} query={query} />,
+      content: <TypicalPage key={`other-${query}`} categoryQuery={null} query={query} />,
     },
   ];
 
