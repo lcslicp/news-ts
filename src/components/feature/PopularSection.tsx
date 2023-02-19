@@ -1,4 +1,4 @@
-import { newsProps } from '../../pages/Home';
+import { newsProps } from '../../Pages/Home';
 import styles from '../../css/feature/PopularSection.module.css';
 import Sidebar from './Sidebar';
 
