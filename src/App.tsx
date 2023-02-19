@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
-import Home from './pages/Home';
-import TypicalPage from './pages/TypicalPage';
+import Home from './Pages/Home';
+import TypicalPage from './Pages/TypicalPage';
 
 export interface queryProps {
   query: string;
@@ -18,7 +18,7 @@ export interface navLinks {
   content: JSX.Element | null;
 }
 
-function App(props: navLinks[]) {
+function App() {
   const [query, setQuery] = useState('');
   const [selectedTab, setSelectedTab] = useState(1);
 
