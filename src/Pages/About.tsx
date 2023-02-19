@@ -30,6 +30,20 @@ const About = () => {
           created for the purpose of this personal project.
         </p>
         <br />
+        <h4 className={styles.title} id='assets'>
+          Site Assets
+        </h4>
+        <p className={styles.description}>
+          This website's assets including the logo and favicon, were created by
+          lcslicp. <br />
+          Illustrations were sourced from{' '}
+          <a href='https://www.opendoodles.com/about' target='_blank'>
+            OpenDoodles
+          </a>
+          . Credits to the original illustrator for their contribution to this
+          website's visual appeal.
+        </p>
+        <br />
         <h4 className={styles.title} id='sitelimitations'>
           Site Limitations
         </h4>

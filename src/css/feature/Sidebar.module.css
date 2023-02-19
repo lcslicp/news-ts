@@ -1,8 +1,13 @@
+.container,
+.divider,
+.article {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: 30%;
   padding-right: var(--width-padding);
-  display: flex;
-  flex-direction: column;
 }
 
 .content {
@@ -21,8 +26,6 @@
 .divider {
   width: 100%;
   border-bottom: 2px solid rgb(var(--black));
-  display: flex;
-  flex-direction: column;
 }
 
 .divider2 {
@@ -30,8 +33,6 @@
 }
 
 .article {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 10px;
 }
 

@@ -1,10 +1,24 @@
-.container {
+.container,
+.upperHeader,
+.search {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.container,
+.inactiveTab {
   background-color: transparent;
-  z-index: 9;
+}
+
+.container,
+.btn,
+.activeTab {
   color: rgb(var(--white));
+}
+
+.container {
+  align-items: center;
+  z-index: 9;
 }
 
 .section {
@@ -12,35 +26,35 @@
   max-width: fit-content;
 }
 
-.upperHeader {
-  display: flex;
-  flex-direction: row;
+.upperHeader,
+.even {
   justify-content: space-between;
-  width: 92%;
+}
+
+.upperHeader,
+.webwidth {
   margin: auto;
 }
 
-.fullwidth {
+.upperHeader {
+  width: 92%;
+}
+
+.fullwidth,
+.navlinks {
   width: 100%;
+}
+
+.fullwidth {
   height: 40px;
 }
 
 .webwidth {
   width: var(--max-width);
-  margin: auto;
 }
 
-.even {
-  justify-content: space-between;
-}
-
-.logo {
-  padding: 40px 0;
-}
-
+.logo,
 .search {
-  display: flex;
-  flex-direction: row;
   padding: 40px 0;
 }
 
@@ -53,31 +67,35 @@
 }
 
 .btn {
-    background-color: rgb(var(--black));
-    padding: 0.2em 2em;
-    color: rgb(var(--white));
-    font-weight: var(--bold);
-    border: none;
+  background-color: rgb(var(--black));
+  padding: 0.2em 2em;
+  font-weight: var(--bold);
+  border: none;
 }
 
-.btn:hover {
-    background-color: rgb(var(--accent));
+.btn:hover,
+.activeTab {
+  background-color: rgb(var(--accent));
+}
+
+.header,
+.nav {
+  background-color: rgb(var(--white));
 }
 
 .header {
   height: fit-content;
-  background-color: rgb(var(--white));
   border-bottom: 2px solid rgb(var(--black));
 }
 
-.label {
+.label,
+.inactiveTab {
   color: rgb(var(--black));
 }
 
 .nav {
   justify-content: center;
   font-size: 0.95em;
-  background-color: rgb(var(--white));
 }
 
 .logo {
@@ -85,22 +103,10 @@
   height: auto;
 }
 
-.activeTab {
-  color: rgb(var(--white));
-  background-color: rgb(var(--accent));
-}
-
-.inactiveTab {
-  color: rgb(var(--black));
-  background-color: transparent;
-}
-
 .navlinks {
   list-style-type: none;
   padding-right: var(--width-padding);
-  visibility: visible;
   gap: 5%;
-  width: 100%;
   text-transform: uppercase;
 }
 
@@ -112,9 +118,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  .navlinks {
-    visibility: hidden;
-  }
 
   .logo {
     width: 15%;

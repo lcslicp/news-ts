@@ -2,17 +2,16 @@ import styles from '../../css/common/Footer.module.css';
 import logo from '../../assets/logo/news-logo-white.svg';
 
 const Footer = () => {
-  const quickLinks = [
-    { id: 1, href: '/', label: 'Home' },
-    { id: 2, href: '/', label: 'Business' },
-    { id: 3, href: '/', label: 'Health' },
-    { id: 4, href: '/', label: 'Entertainment' },
-    { id: 5, href: '/', label: 'Sports' },
+  const links = [
+    { id: 1, href: '/home', label: 'Home' },
+    { id: 2, href: '/about', label: 'About' },
+    { id: 4, href: '/about#assets', label: 'Site Assets' },
+    { id: 3, href: '/about#sitelimitations', label: 'Site Limitations' },
   ];
 
   const resources = [
-    { id: 1, href: '/about', label: 'About' },
-    { id: 2, href: 'https://newsapi.org/', label: 'News API' },
+    { id: 1, href: 'https://newsapi.org/', label: 'News API' },
+    { id: 2, href: '/', label: 'Demo Site' },
     { id: 3, href: 'https://github.com/lcslicp/news-ts', label: 'GitHub' },
     {
       id: 4,
@@ -30,7 +29,7 @@ const Footer = () => {
         </div>
         <div className={styles.section}>
           <h6 className={styles.title}>Quick Links</h6>
-          {quickLinks.map((link) => (
+          {links.map((link) => (
             <a href={link.href} key={link.id} className={styles.links}>
               {link.label}
             </a>
