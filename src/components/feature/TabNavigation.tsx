@@ -11,7 +11,6 @@ interface TabNavigationProps {
 
 const TabNavigation: React.FC<TabNavigationProps> = ({
   links,
-  query,
   selectedTab,
   setSelectedTab,
 }) => {

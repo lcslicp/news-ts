@@ -76,4 +76,38 @@
 
 .copyright {
   font-size: 0.7em;
+  text-align: center;
+  padding: 0 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container  {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .section {
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0 40px 0px;
+  }
+
+  .logo {
+    width: 30%;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .links {
+    font-size: 1em;
+  }
+
+  .copyright {
+    font-size: 0.8em;
+  }
+  
 }

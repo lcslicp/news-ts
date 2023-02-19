@@ -94,3 +94,9 @@
     font-size: 1em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .tab {
+    width: 50%;
+  }
+}
