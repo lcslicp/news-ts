@@ -48,7 +48,7 @@ To create production-ready build, run the command:
 
     `pnpm run build`
 
-Make sure to check the package.json if the scripts are configured correctly.
+Make sure to check the `package.json` if the scripts are configured correctly.
 
 ### Resources
 
