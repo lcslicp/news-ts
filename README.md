@@ -29,10 +29,10 @@ To install all the required dependencies, you can run the following command:
 This application consumes an external API: [News API](https://newsapi.org/). You need an **API key** to use the API.
 
 1. Get your [API key](https://newsapi.org/register) from News API.
-2. Create .env file in the root directory.
-3. Inside the .env you created, define your API key.
+2. Create `.env` file in the root directory.
+3. Inside the `.env` you created, define your API key.
 
- `API_KEY=samplekeyfromnewsapi`
+     `API_KEY=samplekeyfromnewsapi`
 
 ### API Limits
 
@@ -42,7 +42,7 @@ News API's free tier plan only allows up to 100 requests per day. When the limit
 
 To create production-ready build, run the command:
 
-`pnpm run build`
+    `pnpm run build`
 
 Make sure to check the package.json if the scripts are configured correctly.
 
