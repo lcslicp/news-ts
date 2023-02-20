@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv'
 import apiRouter from './routes/newsRoutes.js';
 import apiKeyRouter from './routes/apiKey.js';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
