@@ -1,11 +1,11 @@
 # Now News
 
-Now News is a news website, displaying the latest news fetched from a news api. Visit here: https://news-ts.vercel.app/
+Now News is a news website, displaying the latest news fetched from an external api. Visit here: https://news-ts.vercel.app/
 
 ### Tech Stack
 
-Frontend: React, Typescript
-Backend: Node.js, JavaScript, express
+- Frontend: React, Typescript
+- Backend: Node.js, JavaScript, express
 
 ### Dependencies
 
