@@ -32,7 +32,7 @@ This application consumes an external API: [News API](https://newsapi.org/). You
 
 1. Get your [API key](https://newsapi.org/register) from News API.
 2. Create `.env` file in the root directory.
-3. Inside the `.env` you created, define your API key.
+3. Inside the `.env` file you created, define your API key.
 
 ```
 API_KEY=samplekeyfromnewsapi
@@ -48,7 +48,7 @@ To create production-ready build, run the command:
 
     `pnpm run build`
 
-Make sure to check the `package.json` if the scripts are configured correctly.
+Make sure to check the `package.json` file to make sure the scripts are configured correctly.
 
 ### Resources
 
