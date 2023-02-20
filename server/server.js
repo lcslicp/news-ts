@@ -5,6 +5,10 @@ import apiKeyRouter from './routes/apiKey.js';
 
 dotenv.config();
 const app = express();
+app.use(cors({
+  credentials: true,
+  origin: ['https://news-ts.vercel.app/']
+}));
 
 app.use(express.json());
 
