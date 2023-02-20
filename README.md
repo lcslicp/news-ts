@@ -22,7 +22,9 @@ The following dependencies are required to run this project:
 
 To install all the required dependencies, you can run the following command:
 
-`pnpm install`
+```
+pnpm install
+```
 
 ### External API
 
@@ -32,7 +34,9 @@ This application consumes an external API: [News API](https://newsapi.org/). You
 2. Create `.env` file in the root directory.
 3. Inside the `.env` you created, define your API key.
 
-     `API_KEY=samplekeyfromnewsapi`
+```
+API_KEY=samplekeyfromnewsapi
+```
 
 ### API Limits
 
