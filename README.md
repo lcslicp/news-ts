@@ -1,6 +1,6 @@
 # Now News
 
-Now News is a news website, displaying the latest news fetched from an external api. Visit here: https://news-ts.vercel.app/
+Now News is a news website, displaying the latest news fetched from an external api. Visit here: nownewsite.netlify.app
 
 ### Tech Stack
 
