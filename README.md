@@ -2,12 +2,12 @@
 
 Now News is a news website, displaying the latest news fetched from a news api. Visit here: https://news-ts.vercel.app/
 
-#### Tech Stack
+### Tech Stack
 
 Frontend: React, Typescript
 Backend: Node.js, JavaScript, express
 
-#### Dependencies
+### Dependencies
 
 The following dependencies are required to run this project:
 
@@ -24,7 +24,7 @@ To install all the required dependencies, you can run the following command:
 
 `pnpm install`
 
-#### External API
+### External API
 
 This application consumes an external API: [News API](https://newsapi.org/). You need an **API key** to use the API.
 
@@ -34,11 +34,11 @@ This application consumes an external API: [News API](https://newsapi.org/). You
 
  `API_KEY=samplekeyfromnewsapi`
 
-#### API Limits
+### API Limits
 
 News API's free tier plan only allows up to 100 requests per day. When the limit exceeds, the page will no longer be able to display data from the api for a certain time period. As a fallback, a Demo Website(under development) is provided which only displays placeholder content. 
 
-#### Production
+### Production
 
 To create production-ready build, run the command:
 
@@ -46,7 +46,7 @@ To create production-ready build, run the command:
 
 Make sure to check the package.json if the scripts are configured correctly.
 
-#### Resources
+### Resources
 
 1. [NewsAPI docs](https://newsapi.org/docs)
 2. [React docs](https://beta.reactjs.org/)
