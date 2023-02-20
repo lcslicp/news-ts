@@ -46,7 +46,9 @@ News API's free tier plan only allows up to 100 requests per day. When the limit
 
 To create production-ready build, run the command:
 
-    `pnpm run build`
+```
+pnpm run build
+```
 
 Make sure to check the `package.json` file to make sure the scripts are configured correctly.
 
