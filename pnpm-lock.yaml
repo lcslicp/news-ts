@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  json-loader: ^0.5.7
+
+devDependencies:
+  json-loader: 0.5.7
+
+packages:
+
+  /json-loader/0.5.7:
+    resolution: {integrity: sha512-QLPs8Dj7lnf3e3QYS1zkCo+4ZwqOiF9d/nZnYozTISxXWCfNs9yuky5rJw4/W34s7POaNlbZmQGaB5NiXCbP4w==}
+    dev: true

@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import data from './api/data.json' assert { type: "json" };;
+import data from 'json-loader!./api/data.json';
 
 dotenv.config();
 const app = express();
