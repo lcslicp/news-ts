@@ -18,7 +18,7 @@ export interface navLinks {
   content: JSX.Element | null;
 }
 
-function App(props: navLinks[]) {
+function App() {
   const [query, setQuery] = useState('');
   const [selectedTab, setSelectedTab] = useState(1);
 

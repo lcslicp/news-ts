@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import About from './pages/About';
+import About from './Pages/About';
 import './css/globals.css';
 import NotFound from './components/empty UI state/NotFound';
 
