@@ -14,7 +14,7 @@ const About = () => {
           This is a demo site of{' '}
           <a href='https://newsapi.org/' target='_blank'>
             Now News
-          </a>{' '} and only display placeholder content. This is only a fallback
+          </a>{' '}. This site only displays placeholder content as it is only a fallback
           site for when Now News exceeds API call limits. The main purpose of
           this site is to showcase the UI of Now News. Some features may not
           function as intended as it only consumes a mock API.
