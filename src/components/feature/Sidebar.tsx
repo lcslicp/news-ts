@@ -1,4 +1,4 @@
-import { newsProps } from '../../pages/Home';
+import { newsProps } from '../../Pages/Home';
 import styles from '../../css/feature/Sidebar.module.css';
 
 const Sidebar = (props: newsProps) => {
@@ -17,7 +17,7 @@ const Sidebar = (props: newsProps) => {
           return (
             <div key={news.title} className={styles.article}>
               <span className={styles.date}>{date}</span>
-              <a href={news.url} target='_blank'><h4 className={styles.title}>{news.title}</h4></a>
+              <h4 className={styles.title}>{news.title}</h4>
               <p className={styles.description}>
                 {news.description.substring(0, 200)}...
               </p>

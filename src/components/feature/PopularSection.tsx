@@ -1,4 +1,4 @@
-import { newsProps } from '../../pages/Home';
+import { newsProps } from '../../Pages/Home';
 import styles from '../../css/feature/PopularSection.module.css';
 import Sidebar from './Sidebar';
 
@@ -50,9 +50,7 @@ const PopularSection = (props: newsProps) => {
                         : `${styles.textMain}`
                     }
                   >
-                    <a
-                      href={news.url}
-                      target='_blank'
+                    <div
                       className={
                         props.popularnews[0].title !== title
                           ? `${styles.title}`
@@ -60,7 +58,7 @@ const PopularSection = (props: newsProps) => {
                       }
                     >
                       <h3>{title}</h3>
-                    </a>
+                    </div>
                     <p
                       className={
                         props.popularnews[0].title !== title

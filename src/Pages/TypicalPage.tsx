@@ -8,7 +8,6 @@ import ErrorFetchingAPI from '../components/empty UI state/ErrorFetchingAPI';
 import NotFound from '../components/empty UI state/NotFound';
 
 const typicalPage = (props: {
-  categoryQuery: string | null;
   query: string | null;
 }) => {
   const [newContent, setNewContent] = useState<Article[]>([]);
@@ -19,20 +18,9 @@ const typicalPage = (props: {
     async function fetchNewsbyCategory() {
       setLoading(true);
       try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { categoryQuery, query } = props;
-        const { data } = await axios.get('/category', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          params: {
-            category: categoryQuery,
-            q: query,
-          },
-          withCredentials: true,
-        });
-        setNewContent(data?.articles);
+        const { query } = props;
+        const { data } = await axios.get('/data');
+        setNewContent(data.slice(4, 9));
       } catch (error) {
         console.log(error);
         setError(true);
@@ -44,7 +32,7 @@ const typicalPage = (props: {
 
   useEffect(() => {
     getNewsbyCategory();
-  }, [props.categoryQuery, props.query]);
+  }, [, props.query]);
 
   return (
     <section className={styles.container}>
@@ -65,9 +53,7 @@ const typicalPage = (props: {
           return (
             <div key={content.title} className={styles.article}>
               <span>{date}</span>
-              <a href={content.url} target='_blank'>
                 <h2 className={styles.title}>{content.title}</h2>
-              </a>
               <p className={styles.description}>{content.description}</p>
             </div>
           );

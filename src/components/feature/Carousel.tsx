@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { entNews } from '../../pages/Home';
+import { entNews } from '../../Pages/Home';
 import styles from '../../css/feature/Carousel.module.css';
 
 const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
@@ -44,9 +44,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
                     className={styles.image}
                   />
                   <span>{date}</span>
-                  <a href={news.url} target='_blank'>
                     <h3 className={styles.title}>{news.title}</h3>
-                  </a>
                 </div>
               );
             })}

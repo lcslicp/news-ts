@@ -1,5 +1,5 @@
 import React from 'react';
-import { headlines } from '../../pages/Home';
+import { headlines } from '../../Pages/Home';
 import styles from '../../css/feature/Headlines.module.css';
 
 const Headlines: React.FC<headlines> = ({ headlines }) => {
@@ -33,14 +33,12 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
               </p>
               <span className={styles.description}>{date}</span>
             </div>
-            <a href={headline.url} key={headline.title} target='_blank'>
               <img
                 src={headline.urlToImage}
                 alt={title}
                 className={styles.image}
                 loading='lazy'
               />
-            </a>
           </div>
         );
       })}

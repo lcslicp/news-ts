@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
-import Home from './pages/Home';
-import TypicalPage from './pages/TypicalPage';
+import Home from './Pages/Home';
+import TypicalPage from './Pages/TypicalPage';
 
 export interface queryProps {
   query: string;
@@ -27,35 +27,27 @@ function App(props: navLinks[]) {
     {
       id: 2,
       label: 'Business',
-      content: (
-        <TypicalPage key={`business-${query}`} categoryQuery='business' query={query} />
-      ),
+      content: <TypicalPage key={`business-${query}`} query={query} />,
     },
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage key={`health-${query}`} categoryQuery='health' query={query} />,
+      content: <TypicalPage key={`health-${query}`} query={query} />,
     },
     {
       id: 4,
       label: 'Entertainment',
-      content: (
-        <TypicalPage
-          key={`entertainment-${query}`}
-          categoryQuery='entertainment'
-          query={query}
-        />
-      ),
+      content: <TypicalPage key={`entertainment-${query}`} query={query} />,
     },
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage key={`sports-${query}`} categoryQuery='sports' query={query} />,
+      content: <TypicalPage key={`sports-${query}`} query={query} />,
     },
     {
       id: 6,
       label: null,
-      content: <TypicalPage key={`other-${query}`} categoryQuery={null} query={query} />,
+      content: <TypicalPage key={`other-${query}`} query={query} />,
     },
   ];
 

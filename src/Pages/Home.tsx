@@ -48,28 +48,13 @@ const Home = () => {
   const [error, setError] = useState<boolean>(false);
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    const fetchApiKey = async () => {
-      const { data } = await axios.get('/key');
-      localStorage.setItem('apiKey', data.apiKey);
-    };
-
-    fetchApiKey();
-  });
-
   const getHeadlines = useMemo(() => {
     async function fetchHeadlines() {
       dispatch({ type: 'SET_LOADING_HEADLINES', loading: true });
       try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/headlines', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setHeadlines(data?.articles);
+        const { data } = await axios.get('/data');
+
+        setHeadlines(data.slice(0, 3));
       } catch (error) {
         console.log(error);
         setError(true);
@@ -83,15 +68,9 @@ const Home = () => {
     async function fetchPopularHeadlines() {
       dispatch({ type: 'SET_LOADING_POPULARHEADLINES', loading: true });
       try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/popularnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setPopularNews(data?.articles);
+        const { data } = await axios.get('/data');
+
+        setPopularNews(data?.slice(2, 6));
       } catch (error) {
         console.log(error);
         setError(true);
@@ -105,15 +84,9 @@ const Home = () => {
     async function fetchLatestNews() {
       dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: true });
       try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/latestnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setLatestNews(data?.articles);
+        const { data } = await axios.get('/data');
+
+        setLatestNews(data?.slice(7, 10));
       } catch (error) {
         console.log(error);
         setError(true);
@@ -127,15 +100,9 @@ const Home = () => {
     async function fetchEntertainmentNews() {
       dispatch({ type: 'SET_LOADING_ENTERTAINMENTNEWS', loading: true });
       try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/entertainmentnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setEntertainmentNews(data?.articles);
+        const { data } = await axios.get('/data');
+
+        setEntertainmentNews(data?.slice(10, 20));
       } catch (error) {
         console.log(error);
       }

@@ -5,16 +5,14 @@ const Footer = () => {
   const links = [
     { id: 1, href: '/home', label: 'Home' },
     { id: 2, href: '/about', label: 'About' },
-    { id: 4, href: '/about#assets', label: 'Site Assets' },
-    { id: 3, href: '/about#sitelimitations', label: 'Site Limitations' },
+    { id: 3, href: '/about#assets', label: 'Site Assets' },
   ];
 
   const resources = [
-    { id: 1, href: 'https://newsapi.org/', label: 'News API' },
-    { id: 2, href: '/', label: 'Demo Site' },
-    { id: 3, href: 'https://github.com/lcslicp/news-ts', label: 'GitHub' },
+    { id: 1, href: 'https://nownewsite.netlify.app/', label: 'Now News' },
+    { id: 2, href: 'https://github.com/lcslicp/news-ts/tree/demo-site', label: 'GitHub' },
     {
-      id: 4,
+      id: 3,
       href: 'mailto: lcslicp.dev@gmail.com',
       label: 'Contact Developer',
     },
