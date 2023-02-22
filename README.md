@@ -2,7 +2,7 @@
 
 Now News is a news website, displaying the latest news fetched from an external api.
 
-Visit here: https://nownewsite.netlify.app/
+Visit here: https://nownews.lesliepn.info/
 
 ### Tech Stack
 
@@ -42,7 +42,7 @@ API_KEY=samplekeyfromnewsapi
 
 ### API Limits
 
-News API's free tier plan only allows up to 100 requests per day. When the limit exceeds, the page will no longer be able to display data from the api for a certain time period. As a fallback, a Demo Website(under development) is provided which only displays placeholder content. 
+News API's free tier plan only allows up to 100 requests per day. When the limit exceeds, the page will no longer be able to display data from the api for a certain time period. As a fallback, a [Demo Website](https://nownewsdemo.netlify.app) is provided which only displays placeholder content. 
 
 ### Production
 
