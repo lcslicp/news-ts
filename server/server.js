@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
   });
 
 
-  app.get('/', (req, res) => { res.send('Hello from Backend!')});
+  app.get('/', (req, res) => { res.send('Hello from Express!')});
 app.use('/api', apiKeyRouter);
 app.use('/api', apiRouter);
 
