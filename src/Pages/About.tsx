@@ -59,7 +59,7 @@ const About = () => {
           <br />
           If you are interested in testing out the user interface of the website
           without the limitations set upon by the API used, you may visit the
-          demo site that uses placeholder content.
+          <a href='https://nownewsdemo.netlify.app/' target='_blank'> Demo Site</a> that uses placeholder content.
         </p>
       </section>
       <Footer />

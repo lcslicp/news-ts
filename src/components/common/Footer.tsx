@@ -11,7 +11,7 @@ const Footer = () => {
 
   const resources = [
     { id: 1, href: 'https://newsapi.org/', label: 'News API' },
-    { id: 2, href: '/', label: 'Demo Site' },
+    { id: 2, href: 'https://nownewsdemo.netlify.app/', label: 'Demo Site' },
     { id: 3, href: 'https://github.com/lcslicp/news-ts', label: 'GitHub' },
     {
       id: 4,
