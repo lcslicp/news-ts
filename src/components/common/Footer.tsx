@@ -9,7 +9,7 @@ const Footer = () => {
   ];
 
   const resources = [
-    { id: 1, href: 'https://nownewsite.netlify.app/', label: 'Now News' },
+    { id: 1, href: 'https://nownews.lesliepn.info/', label: 'Now News' },
     { id: 2, href: 'https://github.com/lcslicp/news-ts/tree/demo-site', label: 'GitHub' },
     {
       id: 3,

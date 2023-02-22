@@ -12,7 +12,7 @@ const About = () => {
         <h4 className={styles.title}>About</h4>
         <p className={styles.description}>
           This is a demo site of{' '}
-          <a href='https://newsapi.org/' target='_blank'>
+          <a href='https://nownews.lesliepn.info/' target='_blank'>
             Now News
           </a>{' '}. This site only displays placeholder content as it is only a fallback
           site for when Now News exceeds API call limits. The main purpose of
