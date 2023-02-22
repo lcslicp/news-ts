@@ -8,13 +8,13 @@ dotenv.config();
 const app = express();
 app.use(cors({
   credentials: true,
-  origin: ['https://nownewsite.netlify.app']
+  origin: ['https://nownews.lesliepn.info']
 }));
 
 app.use(express.json());
 
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'https://nownewsite.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'https://nownews.lesliepn.info');
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Headers', 'x-api-key');
     next();
