@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import data from './api/data.json?type=json';
+import data from './api/data.js';
 
 dotenv.config();
 const app = express();
