@@ -3,13 +3,12 @@ import axios from 'axios';
 export const getHeadlinesFromAPI = async (req, res) => {
   try {
     const apiKey = process.env.API_KEY;
-    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
+    const response = await axios.get('https://newsapi.org/v2/everything', {
       headers: {
         'x-api-key': apiKey,
       },
       params: {
-        country: 'ph',
-        category: 'General',
+        q: 'ph',
       },
     });
     const filteredData = response.data.articles.filter(
