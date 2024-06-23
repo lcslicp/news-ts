@@ -23,18 +23,25 @@ function App(props: navLinks[]) {
   const [selectedTab, setSelectedTab] = useState(1);
 
   const links = [
-    { id: 1, label: 'Home', content: <Home /> },
+    { id: 1,
+      label: 'Home',
+      content: <Home /> },
     {
       id: 2,
       label: 'Business',
       content: (
-        <TypicalPage key={`business-${query}`} categoryQuery='business' query={query} />
+        <TypicalPage key={`business-${query}`}
+        categoryQuery='business'
+        query={query} />
       ),
     },
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage key={`health-${query}`} categoryQuery='health' query={query} />,
+      content: <TypicalPage
+      key={`health-${query}`}
+      categoryQuery='health'
+      query={query} />,
     },
     {
       id: 4,
@@ -50,12 +57,18 @@ function App(props: navLinks[]) {
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage key={`sports-${query}`} categoryQuery='sports' query={query} />,
+      content: <TypicalPage
+      key={`sports-${query}`}
+      categoryQuery='sports'
+      query={query} />,
     },
     {
       id: 6,
       label: null,
-      content: <TypicalPage key={`other-${query}`} categoryQuery={null} query={query} />,
+      content: <TypicalPage
+      key={`other-${query}`}
+      categoryQuery={null}
+      query={query} />,
     },
   ];
 

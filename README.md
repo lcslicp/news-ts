@@ -2,7 +2,12 @@
 
 Now News is a news website, displaying the latest news fetched from an external api.
 
-Visit here: https://nownews.lesliepn.info/
+Visit here: https://nownews.lcslicp.dev/
+
+Demo site:
+https://nownewsdemo.lcslicp.dev
+
+Note: A demo site is provided for viewing when API calls are exhausted for the day.
 
 ### Tech Stack
 
@@ -28,7 +33,7 @@ To install all the required dependencies, you can run the following command:
 pnpm install
 ```
 
-### External API
+### External API & ENV variables
 
 This application consumes an external API: [News API](https://newsapi.org/). You need an **API key** to use the API.
 
@@ -38,6 +43,12 @@ This application consumes an external API: [News API](https://newsapi.org/). You
 
 ```
 API_KEY=samplekeyfromnewsapi
+```
+
+1. Define `PORT` in the `.env` file as well.
+
+```
+PORT=5000
 ```
 
 ### API Limits
