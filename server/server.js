@@ -9,13 +9,13 @@ app.use(cors());
 
 app.use(cors({
   credentials: true,
-  origin: ['https://nownewsdemo.netlify.app']
+  origin: ['https://nownewsdemo.netlify.app', 'https://nownewsdemo.lcslicp.dev/']
 }));
 
 app.use(express.json());
 
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://nownewsdemo.netlify.app');
+  res.header('Access-Control-Allow-Origin', 'https://nownewsdemo.netlify.app, https://nownewsdemo.lcslicp.dev/');
   res.header('Access-Control-Allow-Credentials', false);
   next();
 });
