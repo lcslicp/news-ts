@@ -1,21 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import cors from 'cors';
 import data from './api/data.js';
 
 dotenv.config();
 const app = express();
-app.use(cors());
-
-app.use(cors({
-  credentials: true,
-  origin: ['https://nownewsdemo.netlify.app', 'https://nownewsdemo.lcslicp.dev/']
-}));
 
 app.use(express.json());
 
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://nownewsdemo.netlify.app, https://nownewsdemo.lcslicp.dev/');
+  res.header('Access-Control-Allow-Origin', 'https://nownewsdemo.lcslicp.dev');
   res.header('Access-Control-Allow-Credentials', false);
   next();
 });
