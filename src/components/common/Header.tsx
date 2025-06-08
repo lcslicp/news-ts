@@ -2,27 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../../css/common/Header.module.css';
 import { queryProps } from '../../App';
-import logo from '../../assets/logo/news-logo-black.svg';
-import SearchInput from '../feature/SearchInput';
+// import SearchInput from '../feature/SearchInput';
 
-const Header: React.FC<queryProps> = ({
-  query,
-  setQuery,
-  selectedTab,
-  setSelectedTab,
+const Header = ({
 }) => {
   return (
     <header className={`${styles.header} ${styles.fullwidth}`}>
-      <div className={styles.upperHeader}>
+      <div className={`${styles.upperHeader} ${styles.even}`}>
+        <span className={`${styles.headerLeft}`}>Where the ink may be digital, but the integrity remains printed in every word.</span>
         <Link to={'/home'} className={styles.logo}>
-          <img src={logo} alt='news-logo' />
+          <h1>The Modern Newspaper</h1>
         </Link>
-        <SearchInput
-          query={query || ''}
-          setQuery={setQuery}
-          selectedTab={selectedTab || null}
-          setSelectedTab={setSelectedTab}
-        />
+        <span className={`${styles.headerRight}`}>Designed and developed by <a href="www.github.com/lcslicp">lcslicp</a>, for minds that question.</span>
       </div>
     </header>
   );

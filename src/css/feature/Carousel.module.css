@@ -14,7 +14,6 @@
 }
 
 .container {
-  width: 92%;
   margin: auto;
   padding-top: var(--section-padding);
   padding-bottom: 150px;
@@ -82,13 +81,13 @@
 }
 
 .divider {
-  border-bottom: 2px solid rgb(var(--black));
+  border-bottom: 1px solid rgb(var(--black));
 }
 
 .article {
   border-right: 1px solid rgba(var(--black), 0.2);
   justify-content: start;
-  padding: 0 3%;
+  /* padding: 0 3%; */
   height: 250px;
 }
 

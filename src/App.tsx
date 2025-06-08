@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
-import Home from './pages/Home';
-import TypicalPage from './pages/TypicalPage';
+import Home from './Pages/Home';
+import TypicalPage from './Pages/TypicalPage';
+import SearchInput from './components/feature/SearchInput';
 
 export interface queryProps {
   query: string;
@@ -73,21 +74,18 @@ function App(props: navLinks[]) {
   ];
 
   return (
-    <main>
+    <>
       <Header
-        query={query || ''}
-        setQuery={setQuery}
-        selectedTab={selectedTab || null}
-        setSelectedTab={setSelectedTab}
       />
       <TabNavigation
         links={links}
         query={query}
+        setQuery={setQuery}
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
       />
       <Footer />
-    </main>
+    </>
   );
 }
 

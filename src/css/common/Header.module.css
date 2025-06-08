@@ -1,16 +1,35 @@
 .container,
-.upperHeader,
-.search {
+.search, .upperHeader {
   display: flex;
   flex-direction: row;
 }
 
-.container,
+.upperHeader {
+  align-items: center;
+  margin: 0;
+}
+
+.upperHeader > span {
+  color: rgb(var(--black));
+  font-size: var(--body-sm);
+}
+
+.headerRight {
+  width: 12%;
+  padding-left: 1.475rem;
+  
+}
+
+.headerLeft {
+  width: 12%;
+  padding-right: 1.475rem;
+  text-align: right;
+}
+
 .inactiveTab {
   background-color: transparent;
 }
 
-.container,
 .btn,
 .activeTab {
   color: rgb(var(--white));
@@ -26,18 +45,12 @@
   max-width: fit-content;
 }
 
-.upperHeader,
 .even {
   justify-content: space-between;
 }
 
-.upperHeader,
 .webwidth {
   margin: auto;
-}
-
-.upperHeader {
-  width: 92%;
 }
 
 .fullwidth,
@@ -53,39 +66,26 @@
   width: var(--max-width);
 }
 
-.logo,
+h1 {
+  justify-self: center;
+  font-size: 4.375rem;
+  border-left: 1px solid rgb(var(--black));
+  border-right: 1px solid rgb(var(--black));
+  padding-left: 2.375rem;
+  padding-right: 2.375rem;
+}
+
 .search {
-  padding: 40px 0;
+  justify-content: center;
 }
 
-.search > input {
-  height: 3.5em;
-  width: 400px;
-  border: 1px solid rgb(var(--black));
-  padding: 0.2em 1em;
-  margin-right: 2em;
-}
-
-.btn {
-  background-color: rgb(var(--black));
-  padding: 0.2em 2em;
-  font-weight: var(--bold);
-  border: none;
-}
-
-.btn:hover,
 .activeTab {
   background-color: rgb(var(--accent));
 }
 
-.header,
-.nav {
-  background-color: rgb(var(--white));
-}
-
 .header {
   height: fit-content;
-  border-bottom: 2px solid rgb(var(--black));
+  border-bottom: 1px solid rgb(var(--black));
 }
 
 .label,
@@ -98,9 +98,16 @@
   font-size: 0.95em;
 }
 
-.logo {
-  width: 10%;
-  height: auto;
+.btn {
+  color: black;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+h1 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .navlinks {
@@ -114,13 +121,6 @@
   .navlinks {
     gap: 10%;
     width: 400px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-
-  .logo {
-    width: 15%;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../css/common/Header.module.css';
+import styles from '../../css/feature/SearchInput.module.css';
 import { queryProps } from '../../App';
 
 const SearchInput: React.FC<queryProps> = ({

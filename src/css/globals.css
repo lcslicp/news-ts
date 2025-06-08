@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,700;0,900;1,200;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
 :root {
-  font-family: 'Work Sans', sans-serif;
 
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --grey: 231, 231, 237;
+  --bg-grey: 245, 242, 232;
   --darkgrey: 181, 181, 187;
   --secondary: 11, 13, 17;
   --accent: 67, 67, 73;
@@ -14,27 +18,48 @@
   --regular: 400;
   --bold: 700;
   --bolder: 900;
-  --width-padding: 60px;
+  --width-padding: 30px;
   --section-padding: 60px;
+  --body: 1.5rem;
+  --body-sm: 0.75rem;
+  --category: 2rem;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-color: rgb(var(--grey));
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: rgb(var(--bg-grey));
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
+  padding-left: var(--width-padding);
+  padding-right: var(--width-padding);
+  width: 95%;
+  max-width: 1900px;
   margin: auto;
-  background-color: rgb(var(--white));
+}
+
+main, .header, footer {
+  background-color: rgb(var(--bg-grey));
+}
+
+h2, h3, h4, h5, h6, button {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 a {
   font-weight: var(--bold);
-  color: rgb(var(--white));
+  color: rgb(var(--black));
   text-decoration: none;
-  /* border: rgb(67, 67, 73); */
 }
 
 a:hover,

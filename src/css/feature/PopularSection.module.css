@@ -16,13 +16,8 @@
   flex-direction: row;
 }
 
-.popnews,
-.section {
-  gap: 20px;
-}
-
 .popnews {
-  padding-top: var(--section-padding);
+  width: 100%;
 }
 
 .tab,
@@ -31,11 +26,9 @@
 }
 
 .tab {
-  background-color: rgb(var(--black));
-  padding: 1em;
-  width: 15%;
-  color: rgb(var(--white));
-  text-align: center;
+  color: rgb(var(--black));
+  padding-bottom: 1rem;
+  font-size: var(--category);
 }
 
 .divider,
@@ -46,8 +39,7 @@
 }
 
 .divider {
-  width: 100%;
-  border-bottom: 2px solid rgb(var(--black));
+  border-bottom: 1px solid rgb(var(--black));
 }
 
 .sectionTitle {
@@ -72,8 +64,6 @@
 }
 
 .container {
-  width: 70%;
-  padding-left: var(--width-padding);
   padding-right: 20px;
 }
 
@@ -172,7 +162,6 @@
   .popnews {
     display: flex;
     flex-direction: column;
-    width: 90%;
     margin: auto;
     gap: 40px;
   }

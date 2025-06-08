@@ -1,14 +1,14 @@
 .container {
   display: grid;
-  width: 94%;
+  width: 100%;
   height: 600px;
-  padding-top: var(--section-padding);
   grid-template-areas:
     'headline1 headline2'
     'headline1 headline3';
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr 1fr;
-  margin: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .container > div:first-child {
@@ -30,8 +30,7 @@ div,
 
 .article {
   filter: grayscale(1);
-  border: 2px solid rgb(var(--black));
-  margin: 10px;
+  border: 1px solid rgb(var(--black));
 }
 
 div {
