@@ -41,6 +41,7 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   )?.content;
 
   return (
+    <>
     <section className={styles.section}>
       <ul className={styles.nav}>{tabList}</ul>
       <SearchInput
@@ -49,8 +50,9 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
         selectedTab={selectedTab || null}
         setSelectedTab={setSelectedTab}
       />
-      <div>{selectedTabContent}</div>
     </section>
+    <section>{selectedTabContent}</section>
+    </>
   );
 };
 

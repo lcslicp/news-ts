@@ -8,6 +8,7 @@
 
   --white: 255, 255, 255;
   --black: 0, 0, 0;
+  --faded-black: 34, 34, 34;
   --grey: 231, 231, 237;
   --bg-grey: 245, 242, 232;
   --darkgrey: 181, 181, 187;
@@ -18,11 +19,17 @@
   --regular: 400;
   --bold: 700;
   --bolder: 900;
-  --width-padding: 30px;
-  --section-padding: 60px;
-  --body: 1.5rem;
-  --body-sm: 0.75rem;
+  --width-padding: 1.875rem;
+  --height-padding: 0.625rem;
+  --body: 1rem;
+  --body-height: 1.5rem; 
+  --body-sm: 0.875rem;
+  --body-xs: 0.813rem;
   --category: 2rem;
+  --tablet: 600px;
+  --laptop: 1024px;
+  --desktop: 1440px;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,28 +39,54 @@
 }
 
 html, body {
-  margin: 0;
+  margin: auto;
   height: 100%;
   background-color: rgb(var(--bg-grey));
+  padding: 0;
+  max-width: 1900px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+body {
   padding-left: var(--width-padding);
   padding-right: var(--width-padding);
-  width: 95%;
   max-width: 1900px;
-  margin: auto;
 }
 
 main, .header, footer {
   background-color: rgb(var(--bg-grey));
 }
 
+h1 {
+  font-family: "UnifrakturMaguntia", cursive;
+}
+
 h2, h3, h4, h5, h6, button {
   font-family: "PT Serif", serif;
   font-weight: 700;
   font-style: normal;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: var(--category);
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: var(--body-xs);
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  font-size: var(--body);
+  line-height: var(--);
+}
+
+span {
+  font-size: var(--body-xs);
 }
 
 a {

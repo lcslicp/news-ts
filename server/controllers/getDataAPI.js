@@ -9,10 +9,11 @@ export const getHeadlinesFromAPI = async (req, res) => {
       },
       params: {
         q: 'ph',
+        language: 'en'
       },
     });
     const filteredData = response.data.articles.filter(
-      (article) => article.urlToImage !== null
+      (article) => article.urlToImage !== null 
     );
     const limitedData = filteredData.slice(0, 3);
     res.json({ articles: limitedData });
@@ -84,8 +85,15 @@ export const getLatestNewsFromAPI = async (req, res) => {
         language: 'en',
       },
     });
-    const limitedData = response.data.articles.slice(0, 3);
-    res.json({ articles: limitedData });
+    const placeholder = "images/thumbnail-placeholder.jpg";
+    const limitedData = response.data.articles.slice(0, 5);
+    const filteredData = limitedData.filter(
+      (article) => article.description !== null);
+    const normalizedData = filteredData.map(article => ({
+      ...article,
+      urlToImage: article.urlToImage || placeholder
+    }))
+    res.json({ articles: normalizedData });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error fetching Latest News from API' });

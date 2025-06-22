@@ -26,7 +26,6 @@ const SearchInput: React.FC<queryProps> = ({
     <form className={styles.search} onSubmit={handleSubmit}>
       <input
         type='search'
-        className={styles.search}
         placeholder='Search News'
         onChange={handleChange}
         maxLength={500}

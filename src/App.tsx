@@ -4,7 +4,6 @@ import Footer from './components/common/Footer';
 import TabNavigation from './components/feature/TabNavigation';
 import Home from './Pages/Home';
 import TypicalPage from './Pages/TypicalPage';
-import SearchInput from './components/feature/SearchInput';
 
 export interface queryProps {
   query: string;
