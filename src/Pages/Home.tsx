@@ -9,7 +9,7 @@ import {
 
 import Headlines from '../components/feature/Headlines';
 import PopularSection from '../components/feature/PopularSection';
-import Carousel from '../components/feature/Carousel';
+import EntNews from '../components/feature/EntNews';
 import LoadingSpinner from '../components/loading screens/LoadingSpinner';
 import ErrorFetchingAPI from '../components/empty UI state/ErrorFetchingAPI';
 
@@ -170,7 +170,7 @@ const Home = () => {
           {state.loadingEntertainmentNews ? (
             <LoadingSpinner />
           ) : (
-            <Carousel entertainmentnews={entertainmentNews} />
+            <EntNews entertainmentnews={entertainmentNews} />
           )}
         </>
       )}

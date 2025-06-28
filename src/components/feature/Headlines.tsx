@@ -5,7 +5,7 @@ import styles from '../../css/feature/Headlines.module.css';
 const Headlines: React.FC<headlines> = ({ headlines }) => {
   return (
     <section className={styles.container}>
-      {headlines.map((headline, index) => {
+      {headlines.map((headline) => {
         let publishedAt = new Date(headline.publishedAt);
         let date = publishedAt.toLocaleDateString('default', {
           month: 'short',

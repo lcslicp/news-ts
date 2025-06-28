@@ -16,16 +16,27 @@ const PopNews = (props: newsProps) => {
             day: 'numeric',
             year: 'numeric',
           });
+
+          let fixOrphan = (text:string) => {
+            const lastSpaceIndex = text.trim().lastIndexOf(' ');
+            if (lastSpaceIndex === -1) return text;
+  
+            return (
+              text.slice(0, lastSpaceIndex) + '\u00A0' + text.slice(lastSpaceIndex + 1)
+            )
+          }
+          let description = fixOrphan(news.description)
+
           return (
-            <div key={news.title}
+            <div key={index}
                  className={styles.article}>
-              <img src={news.urlToImage} alt={news.title} className={`${styles.img} ${index !== 0 ? styles.hidden : ''}`} />
+              <img src={news.urlToImage} alt={news.title} className={`${styles.img} ${index > 1 ? styles.hidden : ''}`} />
               <div className={styles.content}>
                 <span>{date}</span>
-                <a href={news.url}>
-                  <h5>{news.title}</h5>
+                <a href={news.url} target='_blank'>
+                  <h5 className={index === 0 ? styles.firstTitle : styles.title}>{news.title}</h5>
                 </a>
-                <p lang='en'>{news.description}</p>
+                <p lang='en'>{description}</p>
               </div>
               
             </div>

@@ -18,8 +18,7 @@
 }
 
 .imgContainer {
-  filter: grayscale(1);
-  border: 0.5px solid rgb(var(--black));
+  border: 1px solid rgb(var(--black));
   height: fit-content;
   overflow: hidden;
 }

@@ -62,7 +62,7 @@ export const getPopularHeadlinesFromAPI = async (req, res) => {
     const filteredData = response.data.articles.filter(
       (article) => article.urlToImage !== null
     );
-    const limitedData = filteredData.slice(0, 4);
+    const limitedData = filteredData.slice(0, 5);
     res.json({ articles: limitedData });
   } catch (error) {
     console.error(error);
@@ -113,10 +113,12 @@ export const getEntertainmentNewsFromAPI = async (req, res) => {
         sortBy: 'popularity',
       },
     });
-    const filteredData = response.data.articles.filter(
-      (article) => article.urlToImage !== null
-    );
-    const limitedData = filteredData.slice(0, 10);
+    const placeholder = "images/thumbnail-placeholder.jpg";
+    const normalizedData = response.data.articles.map(article => ({
+      ...article,
+      urlToImage: article.urlToImage || placeholder
+    }))
+    const limitedData = normalizedData.slice(0, 4);
     res.json({ articles: limitedData });
   } catch (error) {
     console.error(error);
