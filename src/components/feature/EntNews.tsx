@@ -7,6 +7,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   const [sodoku, setSodoku] = useState<(number | null)[][]>([]);
   const [userAnswers, setUserAnswers] = useState<(number | null)[][]>([]);
   const [error, setError] = useState<boolean>(false);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [sodokuMessage, setSodokuMessage] = useState<string>('');
   const [cta, setCTA] = useState<String>('Check Your Answers');
   const baseURL = 'http://localhost:5001/api';
@@ -33,6 +34,8 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
         setTimeout(() => {
           setCTA('Check Answers')
         }, 10000)
+      } else {
+        setIsCorrect(true)
       }
     } catch (error) {
       console.log(error);
@@ -40,21 +43,29 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
     }
   }
 
-  useEffect(() => {
-    const fetchSodokuPuzzle = async () => {
-      try {
-        const puzzleRes = await axios.get(`${baseURL}/sodokupuzzle`, {
-          withCredentials: true
-        })
+  const fetchSodokuPuzzle = async () => {
+    try {
+      const puzzleRes = await axios.get(`${baseURL}/sodokupuzzle`, {
+        withCredentials: true
+      })
 
-        setSodoku(puzzleRes.data.puzzle)
-        
-        
-      } catch (error) {
-        console.log(error);
-        setError(true)
-      }
+      setSodoku(puzzleRes.data.puzzle)
+      
+      
+    } catch (error) {
+      console.log(error);
+      setError(true)
     }
+  }
+
+  const generateNewPuzzle = () => {
+    fetchSodokuPuzzle()
+    setIsCorrect(false)
+    setSodokuMessage('')
+    setCTA('Check Answers')
+  }
+
+  useEffect(() => {
     fetchSodokuPuzzle();
   }, [])
 
@@ -114,9 +125,6 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
           <div className={styles.textUpper}>
             <h5>Sodoku Puzzle</h5>
             <p className={styles.puzzleDesc}>Fill in the empty cells so that each row, each column, and each 3×3 grid contains the numbers 1 to 9 — with no repeats. Use logic, not guesswork!</p>
-
-            <button className={styles.btn} onClick={checkSodokuAnswers}>{cta}</button>
-            <p>{sodokuMessage}</p>
           </div>
           
           <div className={styles.puzzleOuter}>
@@ -127,9 +135,14 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
                     {num !== null ? (
                       num
                     ) : (
-                      <input type='number'
-                      min={1}
-                      max={9}
+                      <input type='text'
+                      inputMode='numeric'
+                      maxLength={1}
+                      pattern='[1-9]'
+                      onInput={(e) => {
+                        const target = e.target as HTMLInputElement;
+                        target.value = target.value.replace(/[^1-9]/g, '').slice(0, 1);
+                      }}
                      className={styles.puzzleCell}
                      value={userAnswers[rowIndex]?.[colIndex] ?? ''}
                      onChange={(e) => handleSodokuInput(rowIndex, colIndex, e.target.value)}></input>
@@ -138,6 +151,12 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
                 ))}
               </div>
             ))}
+          </div>
+
+          <div className={styles.textLower}>
+          <p>{sodokuMessage}</p>
+          <button className={styles.btn} onClick={isCorrect ? generateNewPuzzle : checkSodokuAnswers}>{cta}</button>
+            
           </div>
         </div>
       </div>

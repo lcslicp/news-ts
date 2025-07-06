@@ -20,9 +20,6 @@ export const getSodokuData = async (req, res) => {
         })
         currentPuzzle = response.data;
         currentSolution = currentPuzzle.solution;
-
-        console.log('Puzzle:', response.data.puzzle);
-        console.log('Solution:', response.data.solution);
         res.json (response.data)
     } catch (error) {
         console.error(error);
@@ -48,8 +45,6 @@ export const checkAnswer = (req, res) => {
             message: isCorrect ? 'You got it right! 🥳' : 'Hmm... not quite right. 😬',
             button: isCorrect ? 'Generate New Puzzle' : 'Try Again',
         })
-
-    console.log(currentSolution);
 
     } catch(error) {
         console.error(error);
