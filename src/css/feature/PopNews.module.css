@@ -95,8 +95,10 @@
   }
 
   .article:first-child > img {
-    width: 50%;
+    width: 48%;
   }
+
+
 
   .firstTitle  {
     font-size: 2.1rem;

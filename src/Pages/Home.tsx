@@ -1,8 +1,6 @@
-import { useState, useEffect, useMemo, useReducer } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import axios from '../api/axios';
 import {
-  State,
-  Action,
   initialState,
   reducer,
 } from '../reducers/loadingStates';
@@ -48,109 +46,53 @@ const Home = () => {
   const [error, setError] = useState<boolean>(false);
   const [state, dispatch] = useReducer(reducer, initialState);
 
+
+  const baseURL = 'http://localhost:5001/api';
+
   useEffect(() => {
-    const fetchApiKey = async () => {
-      const { data } = await axios.get('/key');
-      localStorage.setItem('apiKey', data.apiKey);
+
+    const fetchNewsData = async () => {
+      dispatch({ type: 'SET_LOADING_HEADLINES', loading: true })
+      dispatch({ type: 'SET_LOADING_POPULARHEADLINES', loading: true })
+      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: true })
+      dispatch({ type: 'SET_LOADING_ENTERTAINMENTNEWS', loading: true })
+      try {
+        const [headlinesRes, popularHeadlinesRes, latestNewsRes, entertainmentNewsRes] = await Promise.all([
+          axios.get(`${baseURL}/headlines`, {
+            withCredentials: true,
+          }),
+          axios.get(`${baseURL}/popularnews`, {
+            withCredentials: true,
+          }),
+          axios.get(`${baseURL}/latestnews`, {
+            withCredentials: true,
+          }),
+          axios.get(`${baseURL}/entertainmentnews`, {
+            withCredentials: true,
+          }),
+        ])
+
+        setHeadlines(headlinesRes.data?.articles);
+        setPopularNews(popularHeadlinesRes.data?.articles)
+        setLatestNews(latestNewsRes.data?.articles)
+        setEntertainmentNews(entertainmentNewsRes.data?.articles)
+       
+      } catch (error) {
+        console.log(error);
+        setError(true)
+      }
+
+      dispatch({ type: 'SET_LOADING_HEADLINES', loading: false })
+      dispatch({ type: 'SET_LOADING_POPULARHEADLINES', loading: false })
+      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: false })
+      dispatch({ type: 'SET_LOADING_ENTERTAINMENTNEWS', loading: false })
     };
 
-    fetchApiKey();
-  });
-
-  const getHeadlines = useMemo(() => {
-    async function fetchHeadlines() {
-      dispatch({ type: 'SET_LOADING_HEADLINES', loading: true });
-      try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/headlines', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setHeadlines(data?.articles);
-      } catch (error) {
-        console.log(error);
-        setError(true);
-      }
-      dispatch({ type: 'SET_LOADING_HEADLINES', loading: false });
-    }
-    return fetchHeadlines;
+    fetchNewsData();
   }, []);
 
-  const getPopularHeadlines = useMemo(() => {
-    async function fetchPopularHeadlines() {
-      dispatch({ type: 'SET_LOADING_POPULARHEADLINES', loading: true });
-      try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/popularnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setPopularNews(data?.articles);
-      } catch (error) {
-        console.log(error);
-        setError(true);
-      }
-      dispatch({ type: 'SET_LOADING_POPULARHEADLINES', loading: false });
-    }
-    return fetchPopularHeadlines;
-  }, []);
 
-  const getLatestNews = useMemo(() => {
-    async function fetchLatestNews() {
-      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: true });
-      try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/latestnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setLatestNews(data?.articles);
-      } catch (error) {
-        console.log(error);
-        setError(true);
-      }
-      dispatch({ type: 'SET_LOADING_LATESTNEWS', loading: false });
-    }
-    return fetchLatestNews;
-  }, []);
-
-  const getEntertainmentNews = useMemo(() => {
-    async function fetchEntertainmentNews() {
-      dispatch({ type: 'SET_LOADING_ENTERTAINMENTNEWS', loading: true });
-      try {
-        const apiKey = localStorage.getItem('apiKey');
-        const { data } = await axios.get('/entertainmentnews', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
-          withCredentials: true,
-        });
-        setEntertainmentNews(data?.articles);
-      } catch (error) {
-        console.log(error);
-      }
-      dispatch({ type: 'SET_LOADING_ENTERTAINMENTNEWS', loading: false });
-    }
-    return fetchEntertainmentNews;
-  }, []);
-
-  useEffect(() => {
-    getHeadlines();
-    getPopularHeadlines();
-    getLatestNews();
-    getEntertainmentNews();
-  }, []);
-
+ 
   return (
     <main>
       {error ? (
@@ -170,7 +112,7 @@ const Home = () => {
           {state.loadingEntertainmentNews ? (
             <LoadingSpinner />
           ) : (
-            <EntNews entertainmentnews={entertainmentNews} />
+            <EntNews entertainmentnews={entertainmentNews}/>
           )}
         </>
       )}

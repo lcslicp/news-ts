@@ -12,13 +12,7 @@ export interface queryProps {
   setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export interface navLinks {
-  id: number;
-  label: string | null;
-  content: JSX.Element | null;
-}
-
-function App(props: navLinks[]) {
+function App() {
   const [query, setQuery] = useState('');
   const [selectedTab, setSelectedTab] = useState(1);
 

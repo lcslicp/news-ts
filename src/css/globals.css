@@ -21,14 +21,12 @@
   --bolder: 900;
   --width-padding: 1.875rem;
   --height-padding: 0.625rem;
+  --body-large: 1.375rem;
   --body: 1rem;
   --body-height: 1.5rem; 
   --body-sm: 0.875rem;
   --body-xs: 0.813rem;
   --category: 2rem;
-  --tablet: 600px;
-  --laptop: 1024px;
-  --desktop: 1440px;
 
 
   font-synthesis: none;

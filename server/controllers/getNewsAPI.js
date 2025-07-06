@@ -1,13 +1,14 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const apiKey = process.env.API_KEY;
 
 export const getHeadlinesFromAPI = async (req, res) => {
   try {
-    const apiKey = process.env.API_KEY;
     const response = await axios.get('https://newsapi.org/v2/everything', {
-      headers: {
-        'x-api-key': apiKey,
-      },
       params: {
+        apiKey,
         q: 'ph',
         language: 'en'
       },
@@ -27,12 +28,9 @@ export const getHeadlinesbyCategoryFromAPI = async (req, res) => {
   try {
     const category = req.query.category;
     const query = req.query.q;
-    const apiKey = process.env.API_KEY;
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
-      headers: {
-        'x-api-key': apiKey,
-      },
       params: {
+        apiKey,
         category: category,
         language: 'en',
         q: query,
@@ -48,12 +46,9 @@ export const getHeadlinesbyCategoryFromAPI = async (req, res) => {
 
 export const getPopularHeadlinesFromAPI = async (req, res) => {
   try {
-    const apiKey = process.env.API_KEY;
     const response = await axios.get('https://newsapi.org/v2/everything', {
-      headers: {
-        'x-api-key': apiKey,
-      },
       params: {
+        apiKey,
         q: 'news today',
         sortBy: 'popularity',
         language: 'en',
@@ -74,12 +69,9 @@ export const getPopularHeadlinesFromAPI = async (req, res) => {
 
 export const getLatestNewsFromAPI = async (req, res) => {
   try {
-    const apiKey = process.env.API_KEY;
     const response = await axios.get('https://newsapi.org/v2/everything', {
-      headers: {
-        'x-api-key': apiKey,
-      },
       params: {
+        apiKey,
         q: 'news today',
         sortBy: 'publishedAt',
         language: 'en',
@@ -102,12 +94,9 @@ export const getLatestNewsFromAPI = async (req, res) => {
 
 export const getEntertainmentNewsFromAPI = async (req, res) => {
   try {
-    const apiKey = process.env.API_KEY;
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
-      headers: {
-        'x-api-key': apiKey,
-      },
       params: {
+        apiKey,
         language: 'en',
         category: 'entertainment',
         sortBy: 'popularity',

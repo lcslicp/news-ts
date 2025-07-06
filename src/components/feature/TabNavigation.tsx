@@ -1,7 +1,12 @@
 import styles from '../../css/feature/TabNavigation.module.css';
 import { useState } from 'react';
-import { navLinks } from '../../App';
 import SearchInput from './SearchInput';
+
+export interface navLinks {
+  id: number;
+  label: string | null;
+  content: JSX.Element | null;
+}
 
 interface TabNavigationProps {
   links: navLinks[];
