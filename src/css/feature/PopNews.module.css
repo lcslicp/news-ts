@@ -18,6 +18,10 @@
   height: 1px;
 }
 
+.date {
+  text-transform: uppercase;
+}
+
 .img {
   width: 100%;
   object-fit: cover;

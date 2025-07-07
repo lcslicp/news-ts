@@ -32,7 +32,7 @@ const PopNews = (props: newsProps) => {
                  className={styles.article}>
               <img src={news.urlToImage} alt={news.title} className={`${styles.img} ${index > 1 ? styles.hidden : ''}`} />
               <div className={styles.content}>
-                <span>{date}</span>
+                <span className={styles.date}>{date} &nbsp; | &nbsp; {news.author}</span>
                 <a href={news.url} target='_blank'>
                   <h5 className={index === 0 ? styles.firstTitle : styles.title}>{news.title}</h5>
                 </a>

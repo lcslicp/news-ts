@@ -49,6 +49,7 @@
 .date {
   font-size: var(--body-sm);
   color: rgb(var(--accent));
+  text-transform: uppercase;
 }
 
 .date, .headline, .headlineSecondary, .description {

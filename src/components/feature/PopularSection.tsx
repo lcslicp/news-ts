@@ -35,7 +35,7 @@ const PopularSection = (props: newsProps) => {
               <div key={news.url}
                    className={styles.article}>
                 <img src={news.urlToImage} alt={news.title} className={`${styles.img} ${index !== 2 ? styles.hidden : ''}`}/>
-                <span>{date}</span>
+                <span className={styles.date}>{date} &nbsp; | &nbsp; {news.author}</span>
                 <a href={news.url} target='_blank'>
                   <h5>{title}</h5>
                 </a>

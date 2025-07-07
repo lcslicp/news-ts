@@ -8,7 +8,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   const [userAnswers, setUserAnswers] = useState<(number | null)[][]>([]);
   const [error, setError] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
-  const [sodokuMessage, setSodokuMessage] = useState<string>('');
+  const [sodokuMessage, setSodokuMessage] = useState<string>("Try it out, let's see what you got! 😉");
   const [cta, setCTA] = useState<String>('Check Your Answers');
   const baseURL = 'http://localhost:5001/api';
 
@@ -58,10 +58,17 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
     }
   }
 
-  const generateNewPuzzle = () => {
-    fetchSodokuPuzzle()
+  const generateNewPuzzle = async () => {
+    setCTA('...')
     setIsCorrect(false)
     setSodokuMessage('')
+
+    try {
+      await fetchSodokuPuzzle()
+    } catch (error) {
+      console.error(error)
+      setSodokuMessage('Something went wrong 😵');
+    }
     setCTA('Check Answers')
   }
 
@@ -107,12 +114,10 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
             };
             let description = fixOrphan(news.description);
 
-
-
             return (
               <div key={index} className={styles.article}>
                 <img src={news.urlToImage} alt={news.title} />
-                <span>{date}</span>
+                <span className={styles.date}>{date} &nbsp; | &nbsp; {news.author}</span>
                 <a href={news.title} target="_blank">
                   <h5 className={styles.title}>{news.title}</h5>
                 </a>

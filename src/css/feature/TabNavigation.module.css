@@ -21,10 +21,11 @@
   font-weight: var(--bold);
   font-size: 1.375rem;
   cursor: pointer;
-  padding: 1rem 1.25rem;
+  padding: 1rem 0;
   text-align: center;
   border-top: 0.5px solid rgb(var(--black));
   border-bottom: 0.5px solid rgb(var(--black));
+  width: 100%;
 }
 
 .tabs,
@@ -46,12 +47,13 @@
 .activeTab {
   color: rgb(var(--white));
   background-color: rgb(var(--black));
-  padding: 1rem 3.25rem;
+  padding: 1rem 0;
 }
 
 .inactiveTab {
   list-style: none;
   background-color: transparent;
+  padding: 1rem 0;
 }
 
 /* tablet */
@@ -65,21 +67,18 @@
   justify-content: space-between;
   }
 
-  .tabs {
-    border-top: none;
-    padding-bottom: 2rem;
-  }
-
   .section {
-    justify-content: space-between;
     border-top: 5px double rgb(var(--black));
   }
 
   .tabs {
+    border-top: none;
+    padding-bottom: 2rem;
     font-size: 0.9em;
     cursor: pointer;
     border-right: 1px solid rgba(var(--black), 0.2);
-    padding: 0.625rem calc(1.675rem + 1vw);
+    padding: 0.625rem 0.5rem;
+    width: 100%;
     text-align: center;
     border-bottom: none;
   }

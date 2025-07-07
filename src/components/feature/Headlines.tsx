@@ -35,7 +35,7 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
               </a>
             </div>
             <div className={styles.text}>
-               <span className={styles.date}>{date}</span>
+               <span className={styles.date}>{date} &nbsp; | &nbsp; {headline.author}</span>
               <a href={headline.url} target='_blank' className={styles.link}>
                 <h3
                   className={

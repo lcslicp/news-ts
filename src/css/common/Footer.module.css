@@ -1,108 +1,62 @@
-.container,
-.section,
-.logo,
-.footer {
-  display: flex;
-}
-
 .container {
-  max-height: fit-content;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.section,
-.footer {
+  display: flex;
   flex-direction: column;
-}
-
-.section {
-  width: 20%;
-  padding: 100px 0 90px 40px;
-  margin: 0;
-}
-
-.title,
-.links:hover {
-  font-weight: var(--bold);
-}
-
-.title,
-.copyright,
-.copyright > a,
-.copyright > a:hover {
-  color: rgb(var(--black));
-}
-
-.title {
-  font-size: 0.9em;
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-
-.links {
-  font-weight: var(--regular);
-  font-size: 0.8em;
-  padding-bottom: 1em;
-}
-
-.links {
-  color: rgba(var(--black), 0.8);
-}
-
-.links:hover {
-  color: rgb(var(--accent));
-}
-
-.logo {
-  width: 50%;
-  margin: auto 0;
-}
-
-.footer {
+  width: 100%;
+  justify-content: center;
   align-items: center;
-  border-top: 0.6px solid rgba(var(--white), 0.6);
+  padding: 2rem 0 0.25rem 0;
 }
 
-.copyright,
-.copyright > a {
-  font-weight: var(--light);
+.footerLinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-top: 5px double rgb(var(--black));
+  border-bottom: 5px double rgb(var(--black));
+  justify-content: center;
+  font-size: var(--body-xs);
 }
 
-.copyright {
-  font-size: 0.7em;
+.footerLinks > a {
+  border-bottom: 0.5px solid rgb(var(--black));
+  padding: 1rem 0;
   text-align: center;
-  padding: 0 40px;
 }
 
-@media only screen and (max-width: 500px) {
-  .container  {
-    flex-direction: column;
-    width: 100vw;
+.copyright > p {
+  font-size: var(--body-xs);
+  opacity: 0.5;
+  text-align: center;
+}
+
+.footerLinks > a:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+
+/* tablet */
+@media screen and (min-width: 600px) {
+  .footerLinks {
+    flex-direction: row;
+  }
+  .footerLinks > a {
+    border-right: 0.5px solid rgb(var(--black));
+    padding: 0 1rem;
+    border-bottom: none;
   }
 
-  .section {
-    width: fit-content;
-    text-align: center;
-    margin: auto;
-    padding: 50px 0 40px 0px;
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+  .footerLinks > a {
+    padding: 0 2rem;
   }
 
-  .logo {
-    width: 30%;
-    margin: auto;
-  }
+}
 
-  .title {
-    font-size: 1.2em;
-  }
+/* desktop */
+@media screen and (min-width: 1440px) {
 
-  .links {
-    font-size: 1em;
-  }
-
-  .copyright {
-    font-size: 0.8em;
-  }
-  
 }

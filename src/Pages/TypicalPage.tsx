@@ -15,17 +15,13 @@ const typicalPage = (props: {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
 
-  const getNewsbyCategory = useMemo(() => {
-    async function fetchNewsbyCategory() {
+  const baseURL = 'http://localhost:5001/api';
+
+  const getNewsbyCategory = async () => {
       setLoading(true);
       try {
-        const apiKey = localStorage.getItem('apiKey');
         const { categoryQuery, query } = props;
-        const { data } = await axios.get('/category', {
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-          },
+        const { data } = await axios.get(`${baseURL}/category`, {
           params: {
             category: categoryQuery,
             q: query,
@@ -38,9 +34,7 @@ const typicalPage = (props: {
         setError(true);
       }
       setLoading(false);
-    }
-    return fetchNewsbyCategory;
-  }, []);
+    };
 
   useEffect(() => {
     getNewsbyCategory();
@@ -64,7 +58,7 @@ const typicalPage = (props: {
           });
           return (
             <div key={content.title} className={styles.article}>
-              <span>{date}</span>
+              <span className={styles.date}>{date} &nbsp; | &nbsp; {content.author}</span>
               <a href={content.url} target='_blank'>
                 <h2 className={styles.title}>{content.title}</h2>
               </a>
