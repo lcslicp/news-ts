@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 
 .articles, .container, section {
@@ -16,6 +17,7 @@
   height: 11.5rem;
   object-fit: cover;
   object-position: center;
+  margin-bottom: 0.675rem;
 }
 
 .puzzleContainer {
@@ -51,6 +53,7 @@
   font-size: 1.5rem;
   line-height: 1.675rem;
   margin: 0;
+  padding: 0.675rem 0; 
 }
 
 .puzzleDesc {
@@ -74,8 +77,8 @@
   justify-content: center
 }
 
-.textLower {
-  padding-top: 1rem;
+.textLower > p {
+  padding: 2rem 0;
 }
 
 .textLower > p {
@@ -98,7 +101,7 @@
 
 .articleDesc {
   margin: 0;
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 .puzzleOuter {
@@ -187,6 +190,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     flex-direction: row;
+    
   }
 
   .articles {

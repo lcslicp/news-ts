@@ -37,13 +37,22 @@
 .title, .firstTitle {
   font-size: 1.5rem;
   line-height: 1.675rem;
-}
-
-
-.firstTitle, .title {
   margin: 0;
-  padding: 0;
+  padding: 0.675rem 0; 
 }
+
+.content > p {
+  margin: 0;
+}
+
+.article:nth-child(2) > img {
+  margin-bottom: 0.675rem;
+}
+
+.article {
+  margin-bottom: 2rem;
+}
+
 
 /* tablet */
 @media screen and (min-width: 600px) {
@@ -58,7 +67,7 @@
     grid-template-areas: 
     "item1 item1 item1 item2 item2 item2"
     "item3 item3 item4 item4 item5 item5";
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .article:first-child {
@@ -85,8 +94,10 @@
   .article:first-child > img, .article:nth-child(2) > img {
     width: 100%;
   }
-  
 
+  .article {
+    margin-bottom: 0;
+  }
 }
 
 /* laptop */
@@ -102,15 +113,9 @@
     width: 48%;
   }
 
-
-
   .firstTitle  {
     font-size: 2.1rem;
     line-height: 2.375rem;
-  }
-
-  .articles {
-    gap: 2.1rem;
   }
 
   .articles {

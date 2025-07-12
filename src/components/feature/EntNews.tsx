@@ -8,7 +8,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   const [userAnswers, setUserAnswers] = useState<(number | null)[][]>([]);
   const [error, setError] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
-  const [sodokuMessage, setSodokuMessage] = useState<string>("Try it out, let's see what you got! 😉");
+  const [sodokuMessage, setSodokuMessage] = useState<string>("Hold on, we're generating the puzzle ⏳");
   const [cta, setCTA] = useState<String>('Check Your Answers');
   const baseURL = 'http://localhost:5001/api';
 
@@ -50,7 +50,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
       })
 
       setSodoku(puzzleRes.data.puzzle)
-      
+      setSodokuMessage("Try it out, let's see what you got! 😉")
       
     } catch (error) {
       console.log(error);
