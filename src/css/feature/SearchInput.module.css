@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: 100%;
   height: fit-content;
   align-items: flex-end;
   border: none;
   padding: var(--height-padding) 0;
 }
 
-.search > input {
+.search, .search > input {
   width: 100%;
+}
+
+.search > input { 
   padding: 0.625rem 1.375rem;
   margin-right: 1em;
   background-color: transparent;
@@ -35,7 +37,6 @@
   color: rgb(var(--white));
 }
 
-
 /* tablet */
 @media screen and (min-width: 600px) {
   .search {
@@ -56,6 +57,5 @@
   .search {
     width: 50%;
   }
-
 }
 

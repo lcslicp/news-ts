@@ -1,15 +1,18 @@
-.container, .articles {
+.container, .articles, .sectionTitle, .textUpper, .textLower, .puzzleOuter, .puzzleRow, .puzzleCell, .puzzleCell > input {
   display: flex;
+}
+
+.container, .articles, .textUpper, .textLower, .puzzleOuter {
   flex-direction: column;
+}
+
+.container, .articles {
+
   gap: 2rem;
   padding-bottom: 2rem;
 }
 
-.articles, .container, section {
-  width: 100%;
-}
-
-.article, .article > img {
+.articles, .container, section, .article, .article > img, .sectionTitle, .textUpper, .textLower, .textUpper > h5, .puzzleOuter, .puzzleRow, .puzzleCell, .puzzleCell > input {
   width: 100%;
 }
 
@@ -23,19 +26,24 @@
 .puzzleContainer {
   background-color: rgb(var(--faded-black));
   height: fit-content;
+
+}
+
+.sectionTitle, .puzzleRow {
+  flex-direction: row;
+}
+
+.sectionTitle, .textUpper, .textLower, .puzzleRow, .puzzleCell, .puzzleCell > input {
+  align-items: center;
+  justify-content: center;
 }
 
 .sectionTitle {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   margin: 0.375rem 0;
 }
 
-.date {
+.date, .btn, .textUpper > h5 {
   text-transform: uppercase;
 }
 
@@ -45,78 +53,73 @@
 
 .sectionTitle > span {
   flex: 1;
-  background-color: rgb(var(--black));
   height: 1px;
+}
+
+.sectionTitle > span, .puzzleCell > input {
+  background-color: rgb(var(--black));
+}
+
+.title, .puzzleDesc, .textUpper > h5, .articleDesc {
+  margin: 0;
 }
 
 .title {
   font-size: 1.5rem;
   line-height: 1.675rem;
-  margin: 0;
   padding: 0.675rem 0; 
 }
 
 .puzzleDesc {
-  text-align: center;
   font-size: var(--body);
   line-height: var(--body-height);
   padding: 2rem 0;
-  margin: 0;
+}
+
+.puzzleDesc, .puzzleCell > input, .textUpper > p, .textLower > p, .textUpper > h5 {
+  text-align: center;
+}
+
+.puzzleContainer, .puzzleCell > input, .btn:hover {
+  color: rgb(var(--white));
 }
 
 .puzzleContainer {
-  color: rgb(var(--white));
-  padding: 2rem;
-}
-
-.textUpper, .textLower {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center
+  padding: 1rem;
 }
 
 .textLower > p {
   padding: 2rem 0;
 }
 
-.textLower > p {
+.textLower > p, .puzzleCell, .puzzleCell > input {
   font-style: italic;
-  font-weight: var(--bold);
   font-family: "PT Serif", serif;
 }
 
+.textLower > p {
+  font-weight: var(--bold);
+}
+
 .textUpper > h5 {
-  text-transform: uppercase;
   border-top: 4px double rgb(var(--white));
   border-bottom: 4px double rgb(var(--white));
-  text-align: center;
   font-size: 1.375rem;
   padding: 1rem 0;
   letter-spacing: 0.5rem;
-  margin: 0;
-  width: 100%;
 }
 
 .articleDesc {
-  margin: 0;
   padding-top: 0;
 }
 
 .puzzleOuter {
-  display: flex;
-  flex-direction: column;
   border: 4px solid rgb(var(--white));
-  width: 100%;
+  box-sizing: border-box;
 }
 
 .puzzleRow {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
   justify-content: space-between;
-  align-items: center;
 }
 
 .puzzleRow:nth-child(3), .puzzleRow:nth-child(6) {
@@ -125,19 +128,11 @@
 
 .puzzleCell, .puzzleCell > input {
   border: 0.25px solid rgb(var(--white));
-  width: 100%;
   aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--bold);
 }
 
 .puzzleCell > input {
-  background-color: rgb(var(--black));
-  color: rgb(var(--white));
   outline: none;
-  text-align: center;
   border: none;
 }
 
@@ -145,29 +140,24 @@
   border-right: 3.5px solid rgb(var(--white));
 }
 
-
 .btn {
   color: rgb(var(--black));
-  text-transform: uppercase;
   background-color: rgb(var(--white));
   border: 1px solid rgb(var(--white));
-  cursor: pointer;
   padding: 0.5rem 1rem;
 }
 
+.btn, .btn:hover {
+  cursor: pointer;
+}
+
 .btn:hover {
-  color: rgb(var(--white));
   background-color: transparent;
   transform: scale(0.98); 
-  cursor: pointer;
 }
 
 .btn:active {
   transform: scale(0.8); 
-}
-
-.textUpper > p, .textLower > p {
-  text-align: center;
 }
 
 /* tablet */
@@ -184,13 +174,16 @@
     font-size: 1.375rem;
   }
 
+  .puzzleContainer {
+    padding: 2rem;
+  }
+
 }
 
 /* laptop */
 @media screen and (min-width: 1024px) {
   .container {
     flex-direction: row;
-    
   }
 
   .articles {

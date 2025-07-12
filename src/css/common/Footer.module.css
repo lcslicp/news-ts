@@ -1,34 +1,36 @@
-.container {
+.container, .footerLinks {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
+}
+
+.container {
   align-items: center;
   padding: 0 0 0.25rem 0;
 }
 
 .footerLinks {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   padding: 0;
   border-top: 5px double rgb(var(--black));
   border-bottom: 5px double rgb(var(--black));
-  justify-content: center;
+}
+
+.footerLinks, .copyright > p {
   font-size: var(--body-xs);
+}
+
+.footerLinks > a, .copyright > p {
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .footerLinks > a {
   border-bottom: 0.5px solid rgb(var(--black));
-  padding: 1rem 0;
-  text-align: center;
 }
 
 .copyright > p {
-  font-size: var(--body-xs);
   opacity: 0.5;
-  text-align: center;
-  padding: 1rem 0;
 }
 
 .footerLinks > a:last-child {
