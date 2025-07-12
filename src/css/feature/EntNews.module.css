@@ -92,7 +92,7 @@
   padding: 2rem 0;
 }
 
-.textLower > p, .puzzleCell, .puzzleCell > input {
+.textLower > p {
   font-style: italic;
   font-family: "PT Serif", serif;
 }
