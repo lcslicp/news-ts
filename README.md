@@ -1,13 +1,8 @@
-# Now News
+# The Modern Newspaper
 
-Now News is a news website, displaying the latest news fetched from an external api.
+**The Modern Newspaper** is a news website, displaying the latest news fetched from an external api.
 
-Visit here: https://nownews.lcslicp.dev/
-
-Demo site:
-https://nownewsdemo.lcslicp.dev
-
-Note: A demo site is provided for viewing when API calls are exhausted for the day.
+Visit here: https://modernewspaper.lcslicp.xyz
 
 ### Tech Stack
 
@@ -35,25 +30,31 @@ pnpm install
 
 ### External API & ENV variables
 
-This application consumes an external API: [News API](https://newsapi.org/). You need an **API key** to use the API.
+This application integrates with two external APIs. You will need API keys to use them:
+- [News API](https://newsapi.org/)
+- [API Ninjas](https://www.api-ninjas.com)
 
-1. Get your [API key](https://newsapi.org/register) from News API.
-2. Create `.env` file in the root directory.
-3. Inside the `.env` file you created, define your API key.
+#### Steps:
+
+1. Get your API keys:
+
+- [News API](https://newsapi.org/register)
+- [Sudoku API](https://www.api-ninjas.com/api/sudoku) 
+
+2. Create `.env` file in the the project root.
+3. Add your API keys and port number in the .env file:
+
 
 ```
 API_KEY=samplekeyfromnewsapi
-```
-
-1. Define `PORT` in the `.env` file as well.
-
-```
+SODOKU_KEY=samplekeyfromapininjas
 PORT=5000
 ```
 
+
 ### API Limits
 
-News API's free tier plan only allows up to 100 requests per day. When the limit exceeds, the page will no longer be able to display data from the api for a certain time period. As a fallback, a [Demo Website](https://nownewsdemo.netlify.app) is provided which only displays placeholder content. 
+News API's free tier plan only allows up to 100 requests per day. When the limit exceeds, the page will no longer be able to display data from the api for a certain time period. 
 
 ### Production
 
@@ -68,8 +69,9 @@ Check the `package.json` file and make sure the scripts are configured correctly
 ### Resources
 
 1. [NewsAPI docs](https://newsapi.org/docs)
-2. [React docs](https://beta.reactjs.org/)
-3. [TypeScript](https://www.typescriptlang.org/docs/)
-4. [pnpm](https://pnpm.io/motivation)
-5. [Node.js](https://nodejs.org/en/docs/)
-6. [Webpack](https://webpack.js.org/)
+2. [Sudoku API docs](https://www.api-ninjas.com/api/sudoku)
+3. [React docs](https://beta.reactjs.org/)
+4. [TypeScript](https://www.typescriptlang.org/docs/)
+5. [pnpm](https://pnpm.io/motivation)
+6. [Node.js](https://nodejs.org/en/docs/)
+7. [Webpack](https://webpack.js.org/)
