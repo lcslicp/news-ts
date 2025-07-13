@@ -120,7 +120,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
               <div key={index} className={styles.article}>
                 <img src={news.urlToImage} alt={news.title} />
                 <span className={styles.date}>{date} &nbsp; | &nbsp; {news.author}</span>
-                <a href={news.title} target="_blank">
+                <a href={news.url} target="_blank">
                   <h5 className={styles.title}>{news.title}</h5>
                 </a>
                 <p lang="en" className={styles.articleDesc}>{description}</p>
