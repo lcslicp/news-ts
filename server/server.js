@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://nownews.lcslicp.dev',
+  origin: 'https://modernewspaper.lcslicp.xyz',
   credentials: true,
 }))
 
