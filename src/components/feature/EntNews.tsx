@@ -144,6 +144,8 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
                       inputMode='numeric'
                       maxLength={1}
                       pattern='[1-9]'
+                      id={`cell-${rowIndex}-${colIndex}`}
+                      name={`cell-${rowIndex}-${colIndex}`}
                       onInput={(e) => {
                         const target = e.target as HTMLInputElement;
                         target.value = target.value.replace(/[^1-9]/g, '').slice(0, 1);
