@@ -14,6 +14,11 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('hello from The Modern Newspaper backend :)');
+});
+
+
 app.use('/api', newsRouter);
 app.use('/api', sodokuRouter);
 
