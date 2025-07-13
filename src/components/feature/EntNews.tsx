@@ -10,7 +10,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [sodokuMessage, setSodokuMessage] = useState<string>("Hold on, we're generating the puzzle ⏳");
   const [cta, setCTA] = useState<String>('Check Your Answers');
-  const baseURL = 'http://localhost:5001/api';
+  const baseURL = 'https://nownews-server.onrender.com/api';
 
 
   const handleSodokuInput = (rowIndex: number, colIndex:number, value: string) => {
