@@ -47,7 +47,7 @@ const Home = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
 
-  const baseURL = 'https://nownews-server.onrender.com/api';
+  const baseURL = 'https://news-ts-production.up.railway.app/api';
 
   useEffect(() => {
 

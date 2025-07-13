@@ -15,7 +15,7 @@ const typicalPage = (props: {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
 
-  const baseURL = 'http://localhost:5001/api';
+  const baseURL = 'https://news-ts-production.up.railway.app/api';
 
   const getNewsbyCategory = async () => {
       setLoading(true);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://nownews-server.onrender.com/api',
+    baseURL: 'https://news-ts-production.up.railway.app/api',
     withCredentials: true,
 });
