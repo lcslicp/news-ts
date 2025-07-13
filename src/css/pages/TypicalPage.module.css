@@ -1,13 +1,12 @@
 .container {
-  height: fit-content;
-  padding: 80px 0;
-  width: 80%;
   margin: auto;
+  width: 80%;
+  padding: 3rem 0;
 }
 
 .article {
+  padding: 2rem 0;
   border-bottom: 1px solid rgba(var(--black), 0.2);
-  margin-bottom: 3em;
 }
 
 .article:last-child {
@@ -27,5 +26,8 @@
   font-size: 0.9em;
   color: rgba(var(--black), 0.8);
   line-height: 1.2em;
-  padding-bottom: 2em;
+}
+
+.date {
+  text-transform: uppercase;
 }

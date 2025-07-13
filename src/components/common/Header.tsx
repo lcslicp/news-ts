@@ -1,28 +1,17 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../../css/common/Header.module.css';
-import { queryProps } from '../../App';
-import logo from '../../assets/logo/news-logo-black.svg';
-import SearchInput from '../feature/SearchInput';
 
-const Header: React.FC<queryProps> = ({
-  query,
-  setQuery,
-  selectedTab,
-  setSelectedTab,
+
+const Header = ({
 }) => {
   return (
-    <header className={`${styles.header} ${styles.fullwidth}`}>
-      <div className={styles.upperHeader}>
-        <Link to={'/home'} className={styles.logo}>
-          <img src={logo} alt='news-logo' />
+    <header className={`${styles.header}`}>
+      <div className={`${styles.upperHeader}`}>
+        <span className={`${styles.headerLeft}`}>Where the ink may be digital, but the integrity remains printed.</span>
+        <Link to={'/home'} className={styles.h1Container}>
+          <h1>The Modern Newspaper</h1>
         </Link>
-        <SearchInput
-          query={query || ''}
-          setQuery={setQuery}
-          selectedTab={selectedTab || null}
-          setSelectedTab={setSelectedTab}
-        />
+        <span className={`${styles.headerRight}`}>News articles sourced from <a href="https://newsapi.org/" target="_blank">NewsAPI</a>.</span>
       </div>
     </header>
   );

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getPopularHeadlinesFromAPI, getHeadlinesFromAPI, getLatestNewsFromAPI, getEntertainmentNewsFromAPI, getHeadlinesbyCategoryFromAPI } from '../controllers/getDataAPI.js';
+import { getPopularHeadlinesFromAPI, getHeadlinesFromAPI, getLatestNewsFromAPI, getEntertainmentNewsFromAPI, getHeadlinesbyCategoryFromAPI } from '../controllers/getNewsAPI.js';
 
 const router = Router();
 

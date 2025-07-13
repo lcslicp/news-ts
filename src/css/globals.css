@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,700;0,900;1,200;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
 :root {
-  font-family: 'Work Sans', sans-serif;
 
   --white: 255, 255, 255;
   --black: 0, 0, 0;
+  --faded-black: 34, 34, 34;
   --grey: 231, 231, 237;
+  --bg-grey: 245, 242, 232;
   --darkgrey: 181, 181, 187;
   --secondary: 11, 13, 17;
   --accent: 67, 67, 73;
@@ -14,27 +19,79 @@
   --regular: 400;
   --bold: 700;
   --bolder: 900;
-  --width-padding: 60px;
-  --section-padding: 60px;
+  --width-padding: 1.875rem;
+  --height-padding: 0.625rem;
+  --body-large: 1.375rem;
+  --body: 1rem;
+  --body-height: 1.5rem; 
+  --body-sm: 0.875rem;
+  --body-xs: 0.813rem;
+  --category: 2rem;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-color: rgb(var(--grey));
+}
+
+html, body {
+  margin: auto;
+  height: 100%;
+  min-height: 100vh;
+  background-color: rgb(var(--bg-grey));
+  padding: 0;
+  max-width: 1900px;
 }
 
 body {
-  margin: auto;
-  background-color: rgb(var(--white));
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  padding-left: var(--width-padding);
+  padding-right: var(--width-padding);
+  max-width: 1900px;
+}
+
+main, .header, footer {
+  background-color: rgb(var(--bg-grey));
+}
+
+h1 {
+  font-family: "UnifrakturMaguntia", cursive;
+}
+
+h2, h3, h4, h5, h6, button {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: var(--category);
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: var(--body-xs);
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  font-size: var(--body);
+  line-height: var(--);
+}
+
+span {
+  font-size: var(--body-xs);
 }
 
 a {
   font-weight: var(--bold);
-  color: rgb(var(--white));
+  color: rgb(var(--black));
   text-decoration: none;
-  /* border: rgb(67, 67, 73); */
 }
 
 a:hover,

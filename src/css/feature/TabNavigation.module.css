@@ -1,28 +1,31 @@
 .section,
 .nav {
   display: flex;
-  background-color: rgb(var(--white));
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.section {
+  height: fit-content;
+  width: 100%;
 }
 
 .nav {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(var(--white));
-  width: 100%;
-  margin: 0;
-  border-bottom: 2px solid rgb(var(--black));
-  padding: 10px 0;
+  padding: 0.625rem 0;
 }
 
 .tabs {
   list-style: none;
   text-transform: uppercase;
   font-weight: var(--bold);
-  font-size: 0.9em;
+  font-size: 1.375rem;
   cursor: pointer;
-  border-right: 1px solid rgba(var(--black), 0.2);
-  padding: 0 20px;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 0.5px solid rgb(var(--black));
+  border-bottom: 0.5px solid rgb(var(--black));
+  width: 100%;
 }
 
 .tabs,
@@ -36,28 +39,78 @@
   color: rgb(var(--black));
 }
 
-.tabs:first-child {
-  border-left: 1px solid rgb(var(--black));
-}
-
-.section {
-  flex-direction: column;
+.tabs:last-child {
+  border-bottom: none;
+  display: none;
 }
 
 .activeTab {
   color: rgb(var(--white));
   background-color: rgb(var(--black));
-  padding: 10px 15px;
+  padding: 1rem 0;
 }
 
 .inactiveTab {
   list-style: none;
   background-color: transparent;
+  padding: 1rem 0;
 }
 
-@media only screen and (max-width: 500px) {
+/* tablet */
+@media screen and (min-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
   .nav {
-    flex-wrap: wrap;
-    width: 100vw;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  }
+
+  .section {
+    border-top: 5px double rgb(var(--black));
+  }
+
+  .tabs {
+    border-top: none;
+    padding-bottom: 2rem;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-right: 1px solid rgba(var(--black), 0.2);
+    padding: 0.625rem 0.5rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: none;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+  .section,
+  .nav {
+    flex-direction: row;
+  }
+
+  .section {
+    margin-bottom: var(--height-padding);
+    border-bottom: 5px double rgb(var(--black));
+  }
+
+  .nav {
+    align-items: center;
+    width: fit-content;
+    justify-content: flex-start;
+  }
+
+  .tabs {
+    padding: 0.625rem calc(1rem + 1vw);
+  }
+}
+
+/* desktop */
+@media  only screen and (min-width: 1440px) {
+
+  .nav {
+    width: 50%;
   }
 }

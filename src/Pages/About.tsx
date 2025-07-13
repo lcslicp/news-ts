@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
+import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import styles from '../css/pages/About.module.css';
 
 const About = () => {
   return (
     <main>
+      <Header />
       <section className={styles.container}>
-        <Link to='/' className={styles.nav}>
+        <div className={styles.text}>   
+                <Link to='/' className={styles.nav}>
           &#171; Back to Homepage
         </Link>
         <h4 className={styles.title}>About</h4>
@@ -61,6 +64,7 @@ const About = () => {
           without the limitations set upon by the API used, you may visit the
           <a href='https://nownewsdemo.lcslicp.dev/' target='_blank'> Demo Site</a> that uses placeholder content.
         </p>
+        </div>
       </section>
       <Footer />
     </main>

@@ -1,16 +1,25 @@
 import styles from '../../css/feature/TabNavigation.module.css';
 import { useState } from 'react';
-import { navLinks } from '../../App';
+import SearchInput from './SearchInput';
+
+export interface navLinks {
+  id: number;
+  label: string | null;
+  content: JSX.Element | null;
+}
 
 interface TabNavigationProps {
   links: navLinks[];
   query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
   selectedTab: number | null;
   setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const TabNavigation: React.FC<TabNavigationProps> = ({
   links,
+  query,
+  setQuery,
   selectedTab,
   setSelectedTab,
 }) => {
@@ -37,10 +46,18 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   )?.content;
 
   return (
+    <>
     <section className={styles.section}>
       <ul className={styles.nav}>{tabList}</ul>
-      <div>{selectedTabContent}</div>
+      <SearchInput
+        query={query || ''}
+        setQuery={setQuery}
+        selectedTab={selectedTab || null}
+        setSelectedTab={setSelectedTab}
+      />
     </section>
+    <section>{selectedTabContent}</section>
+    </>
   );
 };
 
