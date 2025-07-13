@@ -1,0 +1,210 @@
+.container, .articles, .sectionTitle, .textUpper, .textLower, .puzzleOuter, .puzzleRow, .puzzleCell, .puzzleCell > input {
+  display: flex;
+}
+
+.container, .articles, .textUpper, .textLower, .puzzleOuter {
+  flex-direction: column;
+}
+
+.container, .articles {
+
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.articles, .container, section, .article, .article > img, .sectionTitle, .textUpper, .textLower, .textUpper > h5, .puzzleOuter, .puzzleRow, .puzzleCell, .puzzleCell > input {
+  width: 100%;
+}
+
+.article > img {
+  height: 11.5rem;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0.675rem;
+}
+
+.puzzleContainer {
+  background-color: rgb(var(--faded-black));
+  height: fit-content;
+
+}
+
+.sectionTitle, .puzzleRow {
+  flex-direction: row;
+}
+
+.sectionTitle, .textUpper, .textLower, .puzzleRow, .puzzleCell, .puzzleCell > input {
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  gap: 0.5rem;
+  margin: 0.375rem 0;
+}
+
+.date, .btn, .textUpper > h5 {
+  text-transform: uppercase;
+}
+
+.sectionTitle > h4 {
+  white-space: nowrap;
+}
+
+.sectionTitle > span {
+  flex: 1;
+  height: 1px;
+}
+
+.sectionTitle > span, .puzzleCell > input {
+  background-color: rgb(var(--black));
+}
+
+.title, .puzzleDesc, .textUpper > h5, .articleDesc {
+  margin: 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.675rem;
+  padding: 0.675rem 0; 
+}
+
+.puzzleDesc {
+  font-size: var(--body);
+  line-height: var(--body-height);
+  padding: 2rem 0;
+}
+
+.puzzleDesc, .puzzleCell > input, .textUpper > p, .textLower > p, .textUpper > h5 {
+  text-align: center;
+}
+
+.puzzleContainer, .puzzleCell > input, .btn:hover {
+  color: rgb(var(--white));
+}
+
+.puzzleContainer {
+  padding: 1rem;
+}
+
+.textLower > p {
+  padding: 2rem 0;
+}
+
+.textLower > p {
+  font-style: italic;
+  font-family: "PT Serif", serif;
+}
+
+.textLower > p {
+  font-weight: var(--bold);
+}
+
+.textUpper > h5 {
+  border-top: 4px double rgb(var(--white));
+  border-bottom: 4px double rgb(var(--white));
+  font-size: 1.375rem;
+  padding: 1rem 0;
+  letter-spacing: 0.5rem;
+}
+
+.articleDesc {
+  padding-top: 0;
+}
+
+.puzzleOuter {
+  border: 4px solid rgb(var(--white));
+  box-sizing: border-box;
+}
+
+.puzzleRow {
+  justify-content: space-between;
+}
+
+.puzzleRow:nth-child(3), .puzzleRow:nth-child(6) {
+  border-bottom: 3.5px solid rgb(var(--white));
+}
+
+.puzzleCell, .puzzleCell > input {
+  border: 0.25px solid rgb(var(--white));
+  aspect-ratio: 1/1;
+}
+
+.puzzleCell > input {
+  outline: none;
+  border: none;
+}
+
+.puzzleCell:nth-child(3), .puzzleCell:nth-child(6) {
+  border-right: 3.5px solid rgb(var(--white));
+}
+
+.btn {
+  color: rgb(var(--black));
+  background-color: rgb(var(--white));
+  border: 1px solid rgb(var(--white));
+  padding: 0.5rem 1rem;
+}
+
+.btn, .btn:hover {
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: transparent;
+  transform: scale(0.98); 
+}
+
+.btn:active {
+  transform: scale(0.8); 
+}
+
+/* tablet */
+@media screen and (min-width: 600px) {
+
+  .articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+
+  .puzzleCell, .puzzleCell > input {
+    font-size: 1.375rem;
+  }
+
+  .puzzleContainer {
+    padding: 2rem;
+  }
+
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .articles {
+    gap: 2rem;
+    width: 60%;
+  }
+
+  .puzzleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+}
+
+/* desktop */
+@media  only screen and (min-width: 1440px) {
+
+  .puzzleContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+
+}

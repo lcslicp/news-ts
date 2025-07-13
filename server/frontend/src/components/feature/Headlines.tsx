@@ -13,35 +13,43 @@ const Headlines: React.FC<headlines> = ({ headlines }) => {
           year: 'numeric',
         });
         let title = headline.title;
+        let fixOrphan = (text:string) => {
+          const lastSpaceIndex = text.trim().lastIndexOf(" ");
+          if (lastSpaceIndex === -1) return text;
+
+          return (
+            text.slice(0, lastSpaceIndex) + "\u00A0" + text.slice(lastSpaceIndex + 1)
+          )
+        }
+        let description = fixOrphan(headline.description)
 
         return (
           <div className={styles.article} key={title}>
+            <div className={styles.imgContainer}>
+              <a href={headline.url} key={headline.title} target='_blank'>
+                <img
+                  src={headline.urlToImage}
+                  alt={title}
+                  className={styles.image}
+                  loading='lazy'/>
+              </a>
+            </div>
             <div className={styles.text}>
+               <span className={styles.date}>{date} &nbsp; | &nbsp; {headline.author}</span>
               <a href={headline.url} target='_blank' className={styles.link}>
                 <h3
                   className={
-                    headlines[0].title !== title
-                      ? `${styles.headlineSecondary}`
-                      : `${styles.headline}`
-                  }
-                >
-                  {title.length > 95 ? `${title.substring(0, 85)}...` : title}
+                    headlines[0].title === title
+                      ? `${styles.headline}`
+                      : `${styles.headlineSecondary}`}>
+                  {title}
                 </h3>
               </a>
-              <p className={styles.description}>
-                {headline.description.substring(0, 91)}...
+              <p lang='en' className={styles.description}>
+                {description}...
               </p>
-              <span className={styles.description}>{date}</span>
             </div>
-            <a href={headline.url} key={headline.title} target='_blank'>
-              <img
-                src={headline.urlToImage}
-                alt={title}
-                className={styles.image}
-                loading='lazy'
-              />
-            </a>
-          </div>
+        </div>
         );
       })}
     </section>

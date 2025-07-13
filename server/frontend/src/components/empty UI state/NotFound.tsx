@@ -9,10 +9,10 @@ const NotFound = () => {
         alt='Error connecting to API'
         className={styles.illustration}
       />
-      <p className={styles.title}>404 Not Found</p>
+      <h2 className={styles.title}>404 Not Found</h2>
       <p className={styles.text}>
         Oops, it looks like we couldn't find what you're looking for. Maybe try
-        checking the URL or searching for something else?
+        checking the URL or search for something else?
         <br />
         <a href='/'>Go back to Homepage.</a>{' '}
       </p>

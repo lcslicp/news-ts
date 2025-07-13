@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import About from './Pages/About';
 import './css/globals.css';
-import NotFound from './components/empty UI state/NotFound';
+import NotFoundPage from './Pages/404Page';
 
 const rootElement = document.getElementById('root');
 
@@ -14,7 +14,7 @@ if (rootElement) {
         <Route path='/' element={<App />} />
         <Route path='/home' element={<App />} />
         <Route path='/about' element={<About />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route path='/*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

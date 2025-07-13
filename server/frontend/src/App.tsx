@@ -12,29 +12,30 @@ export interface queryProps {
   setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export interface navLinks {
-  id: number;
-  label: string | null;
-  content: JSX.Element | null;
-}
-
 function App() {
   const [query, setQuery] = useState('');
   const [selectedTab, setSelectedTab] = useState(1);
 
   const links = [
-    { id: 1, label: 'Home', content: <Home /> },
+    { id: 1,
+      label: 'Home',
+      content: <Home /> },
     {
       id: 2,
       label: 'Business',
       content: (
-        <TypicalPage key={`business-${query}`} categoryQuery='business' query={query} />
+        <TypicalPage key={`business-${query}`}
+        categoryQuery='business'
+        query={query} />
       ),
     },
     {
       id: 3,
       label: 'Health',
-      content: <TypicalPage key={`health-${query}`} categoryQuery='health' query={query} />,
+      content: <TypicalPage
+      key={`health-${query}`}
+      categoryQuery='health'
+      query={query} />,
     },
     {
       id: 4,
@@ -50,31 +51,34 @@ function App() {
     {
       id: 5,
       label: 'Sports',
-      content: <TypicalPage key={`sports-${query}`} categoryQuery='sports' query={query} />,
+      content: <TypicalPage
+      key={`sports-${query}`}
+      categoryQuery='sports'
+      query={query} />,
     },
     {
       id: 6,
       label: null,
-      content: <TypicalPage key={`other-${query}`} categoryQuery={null} query={query} />,
+      content: <TypicalPage
+      key={`other-${query}`}
+      categoryQuery={null}
+      query={query} />,
     },
   ];
 
   return (
-    <main>
+    <>
       <Header
-        query={query || ''}
-        setQuery={setQuery}
-        selectedTab={selectedTab || null}
-        setSelectedTab={setSelectedTab}
       />
       <TabNavigation
         links={links}
         query={query}
+        setQuery={setQuery}
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
       />
       <Footer />
-    </main>
+    </>
   );
 }
 
