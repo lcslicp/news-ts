@@ -22,6 +22,8 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
   }
 
   const checkSodokuAnswers = async() => {
+    setSodokuMessage('Checking your answers...')
+    setCTA('...')
     try {
       const response = await axios.post(`${baseURL}/check-solution`, {
         userSolution: userAnswers
