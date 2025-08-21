@@ -130,7 +130,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
         </div>
         <div className={styles.puzzleContainer}>
           <div className={styles.textUpper}>
-            <h5>Sodoku Puzzle</h5>
+            <h5>Sudoku Puzzle</h5>
             <p className={styles.puzzleDesc}>Fill in the empty cells so that each row, each column, and each 3×3 grid contains the numbers 1 to 9 — with no repeats. Use logic, not guesswork!</p>
           </div>
           
