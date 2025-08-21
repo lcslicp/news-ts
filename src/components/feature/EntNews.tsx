@@ -143,6 +143,7 @@ const Carousel: React.FC<entNews> = ({ entertainmentnews }) => {
                       num
                     ) : (
                       <input type='text'
+                      autocomplete='off'
                       inputMode='numeric'
                       maxLength={1}
                       pattern='[1-9]'
